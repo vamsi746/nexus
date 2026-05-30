@@ -30,7 +30,7 @@ export default function Login() {
       }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <div style={{
-            width: 48, height: 48, borderRadius: 12, background: 'var(--salmon)',
+            width: 48, height: 48, borderRadius: 12, background: 'var(--accent)',
             display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, margin: '0 auto 16px'
           }}>&#11042;</div>
           <h1 style={{ fontSize: 24, fontWeight: 800, marginBottom: 6 }}>Welcome Back</h1>
@@ -56,7 +56,7 @@ export default function Login() {
           </button>
         </form>
         <div style={{ textAlign: 'center', marginTop: 24, fontSize: 13, color: 'var(--tx2)' }}>
-          Don't have an account? <Link to="/register" style={{ color: 'var(--salmon-light)' }}>Sign up</Link>
+          Don't have an account? <Link to="/register" style={{ color: 'var(--accent-light)' }}>Sign up</Link>
         </div>
       </div>
     </div>

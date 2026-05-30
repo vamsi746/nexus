@@ -49,7 +49,7 @@ export default function Opportunities() {
 
   const typeColors = {
     'Full-Time': { bg: 'rgba(74,222,128,0.08)', color: '#2A8A4A', border: 'rgba(74,222,128,0.2)' },
-    'Internship': { bg: 'rgba(208,131,128,0.08)', color: 'var(--salmon)', border: 'rgba(208,131,128,0.2)' },
+    'Internship': { bg: 'rgba(99,102,241,0.08)', color: 'var(--accent-light)', border: 'rgba(99,102,241,0.2)' },
     'Contract': { bg: 'rgba(6,182,212,0.08)', color: '#0891B2', border: 'rgba(6,182,212,0.2)' },
   };
 
@@ -59,7 +59,7 @@ export default function Opportunities() {
       {/* DECK ACCENTS */}
       <div style={{
         position: 'absolute', top: 40, left: '20%', width: 280, height: 280,
-        background: 'radial-gradient(circle, rgba(208,131,128,0.12) 0%, transparent 70%)', zIndex: -1
+        background: 'radial-gradient(circle, rgba(99,102,241,0.12) 0%, transparent 70%)', zIndex: -1
       }} />
 
       {/* HEADER */}
@@ -87,11 +87,11 @@ export default function Opportunities() {
               onClick={() => setType(t)}
               style={{
                 padding: '8px 18px', borderRadius: 30, border: '1px solid',
-                borderColor: type === t ? 'var(--salmon)' : 'var(--border)',
-                background: type === t ? 'var(--salmon-dim)' : 'transparent',
+                borderColor: type === t ? 'var(--accent)' : 'var(--border)',
+                background: type === t ? 'var(--accent-dim)' : 'transparent',
                 color: type === t ? '#FFFFFF' : 'var(--tx1)',
                 cursor: 'pointer', fontSize: 12, fontWeight: 700,
-                transition: 'var(--ease-smooth)', fontFamily: "'Space Grotesk', sans-serif"
+                transition: 'var(--ease-smooth)', fontFamily: 'Arial, sans-serif'
               }}
             >
               {t}
@@ -117,7 +117,7 @@ export default function Opportunities() {
               boxShadow: '0 2px 12px rgba(0,0,0,0.25)',
               display: 'flex', flexDirection: 'column', gap: 0,
               position: 'relative',
-              fontFamily: "'Space Grotesk', sans-serif"
+              fontFamily: 'Arial, sans-serif'
             }}>
               {/* ── TOP RULE ── */}
               <div style={{
@@ -245,7 +245,7 @@ export default function Opportunities() {
                   style={{
                     padding: '8px 20px', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em',
                     textTransform: 'uppercase', cursor: 'pointer', border: 'none',
-                    background: 'linear-gradient(135deg, #D08380 0%, #FBA39B 100%)',
+                    background: 'linear-gradient(135deg, #3B82F6 0%, #6366F1 100%)',
                     color: '#FFFFFF',
                     transition: 'all 0.2s'
                   }}

@@ -35,7 +35,7 @@ export default function ForStudents() {
 
       {/* HEADER */}
       <div style={{ marginBottom: 48, textAlign: 'center' }}>
-        <span className="chip" style={{ background: 'rgba(208, 131, 128, 0.1)', color: 'var(--salmon)', border: '1px solid rgba(208, 131, 128, 0.25)', marginBottom: 16 }}>
+        <span className="chip" style={{ background: 'rgba(99, 102, 241, 0.1)', color: 'var(--accent-light)', border: '1px solid rgba(99, 102, 241, 0.25)', marginBottom: 16 }}>
           🎓 Student Hub
         </span>
         <h1 style={{ fontSize: 'clamp(32px, 5vw, 48px)', fontWeight: 900, marginBottom: 12, letterSpacing: '-0.03em' }}>
@@ -57,7 +57,7 @@ export default function ForStudents() {
             boxShadow: '0 2px 12px rgba(0,0,0,0.25)',
             display: 'flex', flexDirection: 'column', gap: 0,
             position: 'relative',
-            fontFamily: "'Space Grotesk', sans-serif"
+            fontFamily: 'Arial, sans-serif'
           }}>
             {/* TOP RULE */}
             <div style={{ position: 'absolute', top: 0, left: 36, right: 36, height: 1, background: 'rgba(255,255,255,0.08)' }} />
@@ -76,7 +76,7 @@ export default function ForStudents() {
               style={{
                 padding: '8px 20px', fontSize: 12, fontWeight: 700, letterSpacing: '0.08em',
                 textTransform: 'uppercase', cursor: 'pointer', border: 'none',
-                background: 'linear-gradient(135deg, #D08380 0%, #FBA39B 100%)', color: '#FFFFFF', transition: 'all 0.2s',
+                background: 'linear-gradient(135deg, #F59E0B 0%, #F97316 100%)', color: '#FFFFFF', transition: 'all 0.2s',
                 alignSelf: 'flex-start'
               }}
             >
@@ -101,7 +101,7 @@ export default function ForStudents() {
           { v: '140+', l: 'Countries Covered' },
         ].map(s => (
           <div key={s.l} style={{ textAlign: 'center' }}>
-            <div style={{ fontSize: 28, fontWeight: 900, color: 'var(--salmon)', marginBottom: 4 }}>{s.v}</div>
+            <div style={{ fontSize: 28, fontWeight: 900, color: 'var(--accent-light)', marginBottom: 4 }}>{s.v}</div>
             <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: 'var(--tx2)' }}>{s.l}</div>
           </div>
         ))}

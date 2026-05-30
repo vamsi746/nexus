@@ -35,7 +35,7 @@ export default function StartupCard({ startup }) {
       borderRadius: 0,
       display: 'flex', flexDirection: 'column', gap: 0, padding: 32,
       cursor: 'pointer',
-      fontFamily: "'Space Grotesk', sans-serif",
+      fontFamily: 'Arial, sans-serif',
       position: 'relative',
       transition: 'var(--ease-bounce)'
     }}>
@@ -61,7 +61,7 @@ export default function StartupCard({ startup }) {
                     <span style={{ fontWeight: 800, fontSize: 18, color: '#fff', letterSpacing: '-0.01em' }}>
                       {startup.name}
                     </span>
-                    {startup.verified && <span title="Verified" style={{ color: '#D08380', fontSize: 13 }}>&#10003;</span>}
+                    {startup.verified && <span title="Verified" style={{ color: '#818CF8', fontSize: 13 }}>&#10003;</span>}
                   </div>
                   <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.55)', marginTop: 4 }}>
                     {startup.flag} {startup.location} &middot; Founded {startup.foundedYear || startup.founded || '2023'}
@@ -70,7 +70,7 @@ export default function StartupCard({ startup }) {
               {(startup.isTrending || startup.trending) && (
                 <span style={{
                   fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
-                  color: '#D08380', borderBottom: '1px solid #D08380', paddingBottom: 2
+                  color: '#818CF8', borderBottom: '1px solid #818CF8', paddingBottom: 2
                 }}>
                   Trending
                 </span>
@@ -95,7 +95,7 @@ export default function StartupCard({ startup }) {
                   <span style={{ fontWeight: 800, fontSize: 18, color: '#fff', letterSpacing: '-0.01em' }}>
                     {startup.name}
                   </span>
-                  {startup.verified && <span title="Verified" style={{ color: '#D08380', fontSize: 13 }}>&#10003;</span>}
+                  {startup.verified && <span title="Verified" style={{ color: '#818CF8', fontSize: 13 }}>&#10003;</span>}
                 </div>
                 <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)', marginTop: 4 }}>
                   {startup.flag} {startup.location} &middot; Founded {startup.foundedYear || startup.founded || '2023'}
@@ -104,7 +104,7 @@ export default function StartupCard({ startup }) {
             {(startup.isTrending || startup.trending) && (
               <span style={{
                 fontSize: 10, fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase',
-                color: '#D08380', borderBottom: '1px solid #D08380', paddingBottom: 2
+                color: '#818CF8', borderBottom: '1px solid #818CF8', paddingBottom: 2
               }}>
                 Trending
               </span>
@@ -129,8 +129,8 @@ export default function StartupCard({ startup }) {
         ))}
         <span style={{
           padding: '4px 10px', borderRadius: 0, fontSize: 11, fontWeight: 700,
-          background: 'rgba(208,131,128,0.12)', color: '#D08380',
-          border: '1px solid rgba(208,131,128,0.25)',
+          background: 'rgba(139,92,246,0.12)', color: '#A78BFA',
+          border: '1px solid rgba(139,92,246,0.25)',
           textTransform: 'uppercase', letterSpacing: '0.05em'
         }}>{startup.stage || 'Seed'}</span>
       </div>
@@ -147,7 +147,7 @@ export default function StartupCard({ startup }) {
             fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase',
             color: '#9CA3AF', marginBottom: 6
           }}>Raised</div>
-          <div style={{ fontSize: 15, fontWeight: 800, color: '#D08380' }}>
+          <div style={{ fontSize: 15, fontWeight: 800, color: '#22D3EE' }}>
             {startup.raised || startup.totalRaised || '-'}
           </div>
         </div>
@@ -187,7 +187,7 @@ export default function StartupCard({ startup }) {
         <button onClick={handleCardUpvote} style={{
           padding: '6px 14px', fontSize: 12, fontWeight: 700, letterSpacing: '0.05em',
           cursor: 'pointer', border: 'none',
-          background: hasVoted ? '#D08380' : 'rgba(255,255,255,0.08)',
+          background: hasVoted ? 'linear-gradient(135deg, #F43F5E 0%, #EC4899 100%)' : 'rgba(255,255,255,0.08)',
           color: hasVoted ? '#FFFFFF' : 'rgba(255,255,255,0.7)',
           transition: 'all 0.2s'
         }}>

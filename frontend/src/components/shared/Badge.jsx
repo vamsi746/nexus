@@ -1,4 +1,4 @@
-export default function Badge({ children, color = 'var(--salmon)', bg }) {
+export default function Badge({ children, color = 'var(--accent)', bg }) {
   return (
     <span className="chip" style={{
       background: bg || `${color}18`,

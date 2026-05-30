@@ -48,7 +48,7 @@ export default function Discover() {
       {/* GLOW DECK ACCENTS */}
       <div style={{
         position: 'absolute', top: 40, left: '30%', width: 250, height: 250,
-        background: 'radial-gradient(circle, rgba(208,131,128,0.15) 0%, transparent 70%)', zIndex: -1
+        background: 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)', zIndex: -1
       }} />
 
       {/* HEADER DECK */}
@@ -109,7 +109,7 @@ export default function Discover() {
                   background: selectedCat === c.name ? '#EBECE7' : '#111114',
                   color: selectedCat === c.name ? '#0A0A0C' : '#EBECE7',
                   cursor: 'pointer', fontSize: 12, fontWeight: 700, whiteSpace: 'nowrap',
-                  transition: 'var(--ease-smooth)', fontFamily: "'Space Grotesk', sans-serif"
+                  transition: 'var(--ease-smooth)', fontFamily: 'Arial, sans-serif'
                 }}
               >
                 <span style={{ marginRight: 6 }}>{c.icon || '◈'}</span>

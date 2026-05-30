@@ -34,8 +34,8 @@ export default function COE() {
       {/* HEADER STRIP */}
       <div style={{ textAlign: 'center', marginBottom: 56 }}>
         <span className="chip" style={{
-          background: 'rgba(208, 131, 128, 0.1)', color: 'var(--salmon-light)',
-          border: '1px solid rgba(208, 131, 128, 0.25)', marginBottom: 16, display: 'inline-flex'
+          background: 'rgba(99, 102, 241, 0.1)', color: 'var(--accent-light)',
+          border: '1px solid rgba(99, 102, 241, 0.25)', marginBottom: 16, display: 'inline-flex'
         }}>&#127979; Strategy Acceleration Centre</span>
         <h1 style={{ fontSize: 'clamp(36px, 5vw, 54px)', fontWeight: 900, marginBottom: 16, letterSpacing: '-0.03em' }}>
           Enterprise COE Services
@@ -78,7 +78,7 @@ export default function COE() {
               }}>
                 <div>
                   <div style={{ fontSize: 10, color: 'rgba(255,255,255,0.35)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Starting From</div>
-                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 900, color: '#fff', marginTop: 4 }}>{s.price}</div>
+                  <div style={{ fontFamily: 'Arial, sans-serif', fontSize: 22, fontWeight: 900, color: '#fff', marginTop: 4 }}>{s.price}</div>
                 </div>
                 <button className="btn btn-ghost btn-sm" style={{ color: 'rgba(255,255,255,0.85)' }}>Request Proposal &rarr;</button>
               </div>
@@ -94,7 +94,7 @@ export default function COE() {
       }}>
         <div style={{
           position: 'absolute', bottom: -50, right: -50, width: 200, height: 200,
-          background: 'radial-gradient(circle, rgba(208,131,128,0.06) 0%, transparent 70%)', zIndex: -1
+          background: 'radial-gradient(circle, rgba(99,102,241,0.06) 0%, transparent 70%)', zIndex: -1
         }} />
         <h2 style={{ fontSize: 32, fontWeight: 900, marginBottom: 12, color: 'var(--tx0)' }}>Need a Tailored Engagement?</h2>
         <p style={{ color: 'var(--tx1)', maxWidth: 550, margin: '0 auto 28px', fontSize: 14, lineHeight: 1.6 }}>

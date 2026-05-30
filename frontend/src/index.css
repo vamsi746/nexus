@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+/* Font: Arial (system font) */
 
 /* ─── RESET & BOX MODEL ─── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -13,11 +13,11 @@
   --surface: #16161A;
   --surface-dim: #111114;
 
-  /* Accent Salmon / Coral */
-  --salmon: #D08380;
-  --salmon-light: #FBA39B;
-  --salmon-dim: rgba(208, 131, 128, 0.15);
-  --salmon-glow: rgba(208, 131, 128, 0.35);
+  /* Accent Gradient (Indigo -> Cyan) */
+  --accent: #6366F1;
+  --accent-light: #818CF8;
+  --accent-dim: rgba(99, 102, 241, 0.15);
+  --accent-glow: rgba(99, 102, 241, 0.35);
 
   /* Neutrals */
   --charcoal: #302D2C;
@@ -33,7 +33,7 @@
   /* Borders */
   --border: rgba(255, 255, 255, 0.08);
   --border-strong: rgba(255, 255, 255, 0.12);
-  --border-salmon: rgba(208, 131, 128, 0.3);
+  --border-accent: rgba(99, 102, 241, 0.3);
 
   /* Card backgrounds (light mode) */
   --card-dark: rgba(255, 255, 255, 0.04);
@@ -44,7 +44,7 @@
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.12);
-  --shadow-salmon: 0 0 24px rgba(208, 131, 128, 0.15);
+  --shadow-accent: 0 0 24px rgba(99, 102, 241, 0.15);
   --shadow-neo: 8px 8px 0 rgba(255,255,255,0.1);
 
   /* Radius */
@@ -66,12 +66,13 @@ html {
 
 body {
   background:
-    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(208, 131, 128, 0.04) 0%, transparent 50%),
-    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(251, 163, 155, 0.03) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgba(139, 92, 246, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(236, 72, 153, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse 40% 30% at 50% 90%, rgba(34, 211, 238, 0.05) 0%, transparent 50%),
     var(--bg0);
   background-attachment: fixed;
   color: var(--tx0);
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   min-height: 100vh;
   line-height: 1.6;
@@ -79,7 +80,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: Arial, sans-serif;
   letter-spacing: -0.03em;
   font-weight: 800;
   color: var(--tx0);
@@ -95,11 +96,11 @@ a {
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg0); }
 ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.15); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--salmon); }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
 
 /* ─── INPUTS ─── */
 input, textarea, select {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: Arial, sans-serif;
   background: var(--bg2);
   border: 1px solid var(--border);
   border-radius: var(--ra-md);
@@ -111,8 +112,8 @@ input, textarea, select {
   width: 100%;
 }
 input:focus, textarea:focus, select:focus {
-  border-color: var(--salmon);
-  box-shadow: 0 0 0 3px rgba(208, 131, 128, 0.12);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
   background: var(--bg3);
 }
 input::placeholder, textarea::placeholder { color: var(--tx3); }
@@ -136,7 +137,7 @@ select option { background: var(--bg2); color: var(--tx0); }
   width: 6rem;
   height: 6rem;
   border-radius: 50%;
-  background: rgba(251, 163, 155, 0.08);
+  background: rgba(139, 92, 246, 0.12);
   top: 30%;
   right: 7%;
   filter: blur(30px);
@@ -144,13 +145,13 @@ select option { background: var(--bg2); color: var(--tx0); }
 }
 .glass-card:hover {
   transform: translateY(-4px);
-  border-color: var(--border-salmon);
-  box-shadow: var(--shadow-salmon), var(--shadow-lg);
+  border-color: var(--border-accent);
+  box-shadow: var(--shadow-accent), var(--shadow-lg);
 }
 
 /* ─── CARD STYLE 2: NEOBRUTALIST ─── */
 .neo-card {
-  background: var(--salmon-light);
+  background: linear-gradient(135deg, #6366F1 0%, #22D3EE 100%);
   border: 3px solid #1A1A1D;
   box-shadow: 8px 8px 0 #1A1A1D;
   border-radius: var(--ra-sm);
@@ -158,7 +159,7 @@ select option { background: var(--bg2); color: var(--tx0); }
   overflow: hidden;
 }
 .neo-card .neo-head {
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 14px;
   font-weight: 900;
   width: 100%;
@@ -180,7 +181,7 @@ select option { background: var(--bg2); color: var(--tx0); }
   color: #1A1A1D;
   transition: var(--ease-bounce);
   cursor: pointer;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: Arial, sans-serif;
   font-size: 13px;
 }
 .neo-btn:hover {
@@ -229,7 +230,7 @@ select option { background: var(--bg2); color: var(--tx0); }
   gap: 8px;
   border-radius: var(--ra-md);
   font-weight: 700;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: Arial, sans-serif;
   transition: var(--ease-smooth);
   white-space: nowrap;
   cursor: pointer;
@@ -242,13 +243,13 @@ select option { background: var(--bg2); color: var(--tx0); }
 .btn:active { transform: scale(0.96); }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--salmon) 0%, var(--salmon-light) 100%);
-  color: #1A1A1D;
-  box-shadow: 0 4px 20px rgba(208, 131, 128, 0.3);
+  background: linear-gradient(135deg, #8B5CF6 0%, #22D3EE 100%);
+  color: #fff;
+  box-shadow: 0 4px 24px rgba(139, 92, 246, 0.4);
 }
 .btn-primary:hover {
-  filter: brightness(1.08);
-  box-shadow: 0 6px 28px rgba(208, 131, 128, 0.45);
+  filter: brightness(1.12);
+  box-shadow: 0 6px 32px rgba(139, 92, 246, 0.55);
 }
 
 .btn-outline {
@@ -257,8 +258,8 @@ select option { background: var(--bg2); color: var(--tx0); }
   border: 1px solid var(--border-strong);
 }
 .btn-outline:hover {
-  background: var(--salmon-dim);
-  border-color: var(--salmon);
+  background: var(--accent-dim);
+  border-color: var(--accent);
   color: var(--tx0);
 }
 
@@ -328,7 +329,7 @@ select option { background: var(--bg2); color: var(--tx0); }
 
 /* ─── GRADIENT TEXT ─── */
 .hero-gradient {
-  background: linear-gradient(135deg, #1A1A1D 20%, var(--salmon) 60%, var(--salmon-light) 100%);
+  background: linear-gradient(135deg, #fff 20%, #8B5CF6 50%, #22D3EE 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -353,7 +354,7 @@ select option { background: var(--bg2); color: var(--tx0); }
   align-items: center;
   backdrop-filter: blur(10px);
 }
-.notice-info { background: rgba(208, 131, 128, 0.08); border: 1px solid var(--border-salmon); color: var(--salmon); }
+.notice-info { background: rgba(99, 102, 241, 0.08); border: 1px solid var(--border-accent); color: var(--accent-light); }
 .notice-success { background: rgba(74, 222, 128, 0.08); border: 1px solid rgba(74, 222, 128, 0.25); color: #2A8A4A; }
 .notice-error { background: rgba(251, 113, 133, 0.08); border: 1px solid rgba(251, 113, 133, 0.25); color: #C5304A; }
 

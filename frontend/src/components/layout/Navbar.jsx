@@ -34,12 +34,12 @@ export default function Navbar() {
           <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: 10, textDecoration: 'none' }}>
             <div style={{
               width: 36, height: 36, borderRadius: 10,
-              background: 'linear-gradient(135deg, var(--salmon) 0%, var(--salmon-light) 100%)',
+              background: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 50%, #22D3EE 100%)',
               display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18,
-              boxShadow: '0 0 16px rgba(208, 131, 128, 0.35)'
+              boxShadow: '0 0 20px rgba(236, 72, 153, 0.4)'
             }}>✦</div>
             <span style={{
-              fontFamily: "'Space Grotesk', sans-serif", fontWeight: 900, fontSize: 20,
+              fontFamily: 'Arial, sans-serif', fontWeight: 900, fontSize: 20,
               color: '#EBECE7', letterSpacing: '-0.02em'
             }}>LaunchNexus</span>
           </Link>
@@ -78,7 +78,7 @@ export default function Navbar() {
               <span style={{ fontSize: 13, color: 'rgba(235,236,231,0.45)', marginLeft: 8 }}>{user.email}</span>
               <button onClick={logout} style={{
                 padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
-                fontFamily: "'Space Grotesk', sans-serif", cursor: 'pointer', border: '1px solid rgba(235,236,231,0.25)',
+                fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid rgba(235,236,231,0.25)',
                 background: 'transparent', color: '#EBECE7', transition: 'all 0.2s'
               }}>Logout</button>
             </>
@@ -86,21 +86,21 @@ export default function Navbar() {
             <>
               <button onClick={() => navigate('/login')} style={{
                 padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
-                fontFamily: "'Space Grotesk', sans-serif", cursor: 'pointer', border: '1px solid rgba(235,236,231,0.25)',
+                fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid rgba(235,236,231,0.25)',
                 background: 'transparent', color: '#EBECE7', transition: 'all 0.2s'
               }}>
                 Sign In
               </button>
               <button onClick={() => navigate('/register?type=student')} style={{
                 padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
-                fontFamily: "'Space Grotesk', sans-serif", cursor: 'pointer', border: '1px solid #EBECE7',
+                fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid #EBECE7',
                 background: 'transparent', color: '#EBECE7', transition: 'all 0.2s'
               }}>
                 For Students
               </button>
               <button onClick={() => navigate('/register?type=startup')} style={{
                 padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
-                fontFamily: "'Space Grotesk', sans-serif", cursor: 'pointer', border: '1px solid #EBECE7',
+                fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid #EBECE7',
                 background: '#EBECE7', color: '#040405', transition: 'all 0.2s'
               }}>
                 List Startup 🚀

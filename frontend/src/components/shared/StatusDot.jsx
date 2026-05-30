@@ -1,5 +1,5 @@
 export default function StatusDot({ status }) {
-  const map = { 'Open': '#4ADE80', 'Closing Soon': '#FCD34D', 'Upcoming': 'var(--salmon)', 'Closed': '#FB7185' };
+  const map = { 'Open': '#4ADE80', 'Closing Soon': '#FCD34D', 'Upcoming': 'var(--accent)', 'Closed': '#FB7185' };
   const color = map[status] || '#aaa';
   return (
     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 5 }}>

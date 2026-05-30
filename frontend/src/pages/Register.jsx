@@ -66,7 +66,7 @@ export default function Register() {
   const renderStartupStep = () => {
     if (step === 1) return (
       <div>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Create Your Account</h3>
+        <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Create Your Account</h3>
         <Field label="Full Name" placeholder="John Smith" value={form.name} onChange={e => update('name', e.target.value)} />
         <Field label="Work Email" placeholder="john@startup.com" type="email" value={form.email} onChange={e => update('email', e.target.value)} />
         <Field label="Password" placeholder="Min. 8 characters" type="password" value={form.password} onChange={e => update('password', e.target.value)} />
@@ -75,7 +75,7 @@ export default function Register() {
     );
     if (step === 2) return (
       <div>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 8 }}>Company Registration Status</h3>
+        <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 8 }}>Company Registration Status</h3>
         <p style={{ fontSize: 13, color: 'var(--tx2)', marginBottom: 20 }}>Tell us about your company's legal status so we can verify your listing.</p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 10, marginBottom: 20 }}>
           {[
@@ -84,10 +84,10 @@ export default function Register() {
           ].map(([v, l]) => (
             <div key={v} onClick={() => setIsCompanyReg(v)}
               style={{
-                padding: '14px 16px', border: `1px solid ${isCompanyReg === v ? 'var(--salmon)' : 'var(--border)'}`,
+                padding: '14px 16px', border: `1px solid ${isCompanyReg === v ? 'var(--accent)' : 'var(--border)'}`,
                 borderRadius: 10, cursor: 'pointer',
-                background: isCompanyReg === v ? 'var(--salmon-dim)' : 'var(--bg2)',
-                fontSize: 14, color: isCompanyReg === v ? 'var(--salmon-light)' : 'var(--tx1)', transition: 'all 0.15s'
+                background: isCompanyReg === v ? 'var(--accent-dim)' : 'var(--bg2)',
+                fontSize: 14, color: isCompanyReg === v ? 'var(--accent-light)' : 'var(--tx1)', transition: 'all 0.15s'
               }} dangerouslySetInnerHTML={{ __html: l }} />
           ))}
         </div>
@@ -99,7 +99,7 @@ export default function Register() {
               <label style={{ display: 'block', fontSize: 12, color: 'var(--tx2)', marginBottom: 6, fontWeight: 500 }}>Upload Incorporation Certificate</label>
               <div style={{ border: '2px dashed var(--border)', borderRadius: 8, padding: '24px 16px', textAlign: 'center', color: 'var(--tx2)', fontSize: 12, cursor: 'pointer', background: 'var(--bg3)', transition: 'border-color 0.15s' }}>
                 <div style={{ fontSize: 24, marginBottom: 6 }}>&#128206;</div>
-                Drop PDF / JPG here or <span style={{ color: 'var(--salmon-light)' }}>browse</span>
+                Drop PDF / JPG here or <span style={{ color: 'var(--accent-light)' }}>browse</span>
                 <div style={{ marginTop: 4, fontSize: 10 }}>Max 10MB &middot; PDF, JPG, PNG</div>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default function Register() {
     );
     if (step === 3) return (
       <div>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Startup Details</h3>
+        <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Startup Details</h3>
         <Field label="Startup Name" placeholder="Your startup's name" value={form.startupName} onChange={e => update('startupName', e.target.value)} />
         <Field label="Tagline (max 120 chars)" placeholder="One sentence that explains what you do" value={form.tagline} onChange={e => update('tagline', e.target.value)} />
         <div style={{ marginBottom: 14 }}>
@@ -130,7 +130,7 @@ export default function Register() {
     );
     if (step === 4) return (
       <div>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Products & Links</h3>
+        <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Products & Links</h3>
         <Field label="Product Name" placeholder="Your main product's name" value={form.productName} onChange={e => update('productName', e.target.value)} />
         <div style={{ marginBottom: 14 }}>
           <label style={{ display: 'block', fontSize: 12, color: 'var(--tx2)', marginBottom: 6, fontWeight: 500 }}>Product Description</label>
@@ -147,7 +147,7 @@ export default function Register() {
     );
     if (step === 5) return (
       <div>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 8 }}>Review & Submit</h3>
+        <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 8 }}>Review & Submit</h3>
         <p style={{ fontSize: 13, color: 'var(--tx1)', marginBottom: 20, lineHeight: 1.6 }}>
           Your startup listing will go live after our team reviews and verifies your submission (typically within 24–48 hours).
         </p>
@@ -177,7 +177,7 @@ export default function Register() {
   const renderStudentStep = () => {
     if (step === 1) return (
       <div>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Create Student Account</h3>
+        <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Create Student Account</h3>
         <Field label="Full Name" placeholder="Your full name" value={form.name} onChange={e => update('name', e.target.value)} />
         <Field label="University Email" placeholder="name@university.edu" type="email" value={form.email} onChange={e => update('email', e.target.value)} />
         <Field label="Password" placeholder="Min. 8 characters" type="password" value={form.password} onChange={e => update('password', e.target.value)} />
@@ -186,7 +186,7 @@ export default function Register() {
     );
     if (step === 2) return (
       <div>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 20 }}>University Details</h3>
+        <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>University Details</h3>
         <Field label="University / College Name" placeholder="Search your university..." value={form.university} onChange={e => update('university', e.target.value)} />
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
           <Field label="Degree" options={["Bachelor's", "Master's", 'PhD', 'Diploma', 'Associate']} value={form.degree} onChange={e => update('degree', e.target.value)} />
@@ -197,7 +197,7 @@ export default function Register() {
     );
     if (step === 3) return (
       <div>
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Your Profile</h3>
+        <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>Your Profile</h3>
         <div style={{ marginBottom: 14 }}>
           <label style={{ display: 'block', fontSize: 12, color: 'var(--tx2)', marginBottom: 6, fontWeight: 500 }}>Bio</label>
           <textarea placeholder="Tell startups about yourself..." style={{ height: 80, resize: 'vertical' }} value={form.bio} onChange={e => update('bio', e.target.value)} />
@@ -209,7 +209,7 @@ export default function Register() {
         </div>
         <Field label="Portfolio / Website" placeholder="yourportfolio.com" value={form.portfolioUrl} onChange={e => update('portfolioUrl', e.target.value)} />
         <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginTop: 8 }}>
-          <input type="checkbox" id="openwork" style={{ width: 'auto', accentColor: 'var(--salmon)' }} checked={form.isOpenToWork} onChange={e => update('isOpenToWork', e.target.checked)} />
+          <input type="checkbox" id="openwork" style={{ width: 'auto', accentColor: 'var(--accent)' }} checked={form.isOpenToWork} onChange={e => update('isOpenToWork', e.target.checked)} />
           <label htmlFor="openwork" style={{ fontSize: 13, color: 'var(--tx1)', cursor: 'pointer' }}>
             I'm open to internship and job opportunities
           </label>
@@ -226,7 +226,7 @@ export default function Register() {
       }}>
         <div style={{ padding: '24px 28px', borderBottom: '1px solid var(--border)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
-            <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 700 }}>
+            <div style={{ fontFamily: 'Arial, sans-serif', fontSize: 18, fontWeight: 700 }}>
               {type === 'startup' ? '🚀 List Your Startup' : '🎓 Join as Student'}
             </div>
             <div style={{ fontSize: 12, color: 'var(--tx2)', marginTop: 2 }}>
@@ -242,12 +242,12 @@ export default function Register() {
         <div style={{ padding: '4px 28px 12px', borderBottom: '1px solid var(--border)' }}>
           <div style={{ display: 'flex', gap: 4, padding: '12px 0' }}>
             {Array.from({ length: totalSteps }).map((_, i) => (
-              <div key={i} style={{ flex: 1, height: 3, borderRadius: 2, background: i < step ? 'var(--salmon)' : 'var(--bg3)', transition: 'background 0.3s' }} />
+              <div key={i} style={{ flex: 1, height: 3, borderRadius: 2, background: i < step ? 'var(--accent)' : 'var(--bg3)', transition: 'background 0.3s' }} />
             ))}
           </div>
           <div style={{ display: 'flex', gap: 0 }}>
             {stepLabels.map((l, i) => (
-              <div key={l} style={{ flex: 1, fontSize: 9, color: i < step ? 'var(--salmon-light)' : 'var(--tx2)', textAlign: 'center', fontWeight: i === step - 1 ? 600 : 400 }}>{l}</div>
+              <div key={l} style={{ flex: 1, fontSize: 9, color: i < step ? 'var(--accent-light)' : 'var(--tx2)', textAlign: 'center', fontWeight: i === step - 1 ? 600 : 400 }}>{l}</div>
             ))}
           </div>
         </div>

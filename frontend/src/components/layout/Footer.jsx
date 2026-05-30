@@ -18,12 +18,12 @@ export default function Footer() {
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
               <div style={{
                 width: 30, height: 30, borderRadius: 8,
-                background: 'linear-gradient(135deg, var(--salmon), var(--salmon-light))',
+                background: 'linear-gradient(135deg, #EC4899, #8B5CF6, #22D3EE)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14
               }}>&#11042;</div>
               <span style={{
-                fontFamily: "'Space Grotesk', sans-serif", fontWeight: 800, fontSize: 16,
-                background: 'linear-gradient(90deg, var(--salmon-light), var(--salmon))', WebkitBackgroundClip: 'text',
+                fontFamily: 'Arial, sans-serif', fontWeight: 800, fontSize: 16,
+                background: 'linear-gradient(90deg, #22D3EE, #8B5CF6, #EC4899)', WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent'
               }}>LaunchNexus</span>
             </div>
@@ -35,7 +35,7 @@ export default function Footer() {
                 <button key={s} style={{
                   padding: '5px 10px', background: 'var(--bg2)',
                   border: '1px solid var(--border)', borderRadius: 6, color: 'var(--tx2)',
-                  cursor: 'pointer', fontSize: 11, fontFamily: "'Space Grotesk', sans-serif"
+                  cursor: 'pointer', fontSize: 11, fontFamily: 'Arial, sans-serif'
                 }}>{s}</button>
               ))}
             </div>
@@ -47,7 +47,7 @@ export default function Footer() {
                 <div key={l} style={{
                   fontSize: 12, color: 'var(--tx2)', marginBottom: 8, cursor: 'pointer', transition: 'color 0.15s'
                 }}
-                  onMouseEnter={e => e.target.style.color = 'var(--salmon-light)'}
+                  onMouseEnter={e => e.target.style.color = 'var(--accent-light)'}
                   onMouseLeave={e => e.target.style.color = 'var(--tx2)'}
                 >{l}</div>
               ))}

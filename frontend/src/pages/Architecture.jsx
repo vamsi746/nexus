@@ -47,8 +47,8 @@ export default function Architecture() {
     <div style={{ maxWidth: 1000, margin: '0 auto', padding: '40px 24px' }}>
       <div style={{ marginBottom: 40 }}>
         <div className="chip" style={{
-          background: 'var(--salmon-dim)', color: 'var(--salmon-light)',
-          border: '1px solid var(--border-salmon)', marginBottom: 16, display: 'inline-flex'
+          background: 'var(--accent-dim)', color: 'var(--accent-light)',
+          border: '1px solid var(--border-accent)', marginBottom: 16, display: 'inline-flex'
         }}>
           &#128208; System Architecture Document v1.0
         </div>
@@ -73,8 +73,8 @@ export default function Architecture() {
             {section.content.map(block => (
               <div key={block.head}>
                 <div style={{
-                  fontFamily: "'Space Grotesk', sans-serif", fontWeight: 600, fontSize: 14,
-                  color: 'var(--salmon-light)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em'
+                  fontFamily: 'Arial, sans-serif', fontWeight: 600, fontSize: 14,
+                  color: 'var(--accent-light)', marginBottom: 8, textTransform: 'uppercase', letterSpacing: '0.05em'
                 }}>{block.head}</div>
                 {block.text && <p style={{ fontSize: 13, color: 'var(--tx1)', lineHeight: 1.7 }}>{block.text}</p>}
                 {block.items && (
@@ -84,7 +84,7 @@ export default function Architecture() {
                         display: 'flex', gap: 10, alignItems: 'flex-start',
                         fontSize: 13, color: 'var(--tx1)', lineHeight: 1.6
                       }}>
-                        <span style={{ color: 'var(--salmon)', marginTop: 2, fontSize: 10, minWidth: 14 }}>&#9656;</span>
+                        <span style={{ color: 'var(--accent)', marginTop: 2, fontSize: 10, minWidth: 14 }}>&#9656;</span>
                         <span>{item}</span>
                       </div>
                     ))}

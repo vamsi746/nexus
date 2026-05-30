@@ -37,18 +37,17 @@ const FALLBACK_HACKATHONS = [
 ];
 
 const FALLBACK_SERVICES = [
-  { id: 1, name: 'Brand & Identity', icon: '✦', color: 'var(--salmon)', desc: 'Logo, pitch decks, and full visual guidelines by our creative network.', items: ['Brand Guidelines', 'Pitch Deck Overhaul', 'Marketing Materials'], price: 'From $499', badge: 'Popular' },
+  { id: 1, name: 'Brand & Identity', icon: '✦', color: 'var(--accent)', desc: 'Logo, pitch decks, and full visual guidelines by our creative network.', items: ['Brand Guidelines', 'Pitch Deck Overhaul', 'Marketing Materials'], price: 'From $499', badge: 'Popular' },
   { id: 2, name: 'Digital Growth Strategy', icon: '◈', color: '#8B5CF6', desc: 'Full-funnel growth: performance ads, search optimization, and content engines.', items: ['SEO Overhaul', 'Meta/Google Ads', 'Data Engineering'], price: 'From $799/mo', badge: 'Active' },
-  { id: 3, name: 'Dedicated Development', icon: '⟨/⟩', color: 'var(--salmon-light)', desc: 'MVP engineering squads, scaling cloud infrastructure, and product scoping.', items: ['MVP Sprint', 'DevOps Architecture', 'React scaling'], price: 'From $150/hr', badge: 'Top Rated' },
+  { id: 3, name: 'Dedicated Development', icon: '⟨/⟩', color: 'var(--accent-light)', desc: 'MVP engineering squads, scaling cloud infrastructure, and product scoping.', items: ['MVP Sprint', 'DevOps Architecture', 'React scaling'], price: 'From $150/hr', badge: 'Top Rated' },
 ];
 
 /* ─── WALLET STACK COMPONENT ─── */
 function WalletStack({ startups, allStartups, navigate }) {
-  const [active, setActive] = useState(0);
   const [browseCat, setBrowseCat] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const trending = startups.filter(s => s.isTrending).slice(0, 5);
+  const trending = startups.filter(s => s.isTrending);
   if (!trending.length) return null;
 
   const browseList = allStartups && allStartups.length ? allStartups : startups;
@@ -86,243 +85,119 @@ function WalletStack({ startups, allStartups, navigate }) {
     'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=600&q=80',
   ];
 
-  useEffect(() => {
-    const timer = setInterval(() => setActive(i => (i + 1) % trending.length), 5000);
-    return () => clearInterval(timer);
-  }, [trending.length]);
-
-  const s = trending[active];
-
   return (
     <section style={{ padding: '80px 24px', background: '#0A0A0C' }}>
       {/* HEADER */}
       <div style={{
         maxWidth: 1320, margin: '0 auto',
         textAlign: 'center',
-        marginBottom: 56
+        marginBottom: 48
       }}>
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 6,
           padding: '5px 12px', borderRadius: 20,
-          background: 'rgba(208,131,128,0.12)',
-          border: '1px solid rgba(208,131,128,0.22)',
+          background: 'rgba(236,72,153,0.12)',
+          border: '1px solid rgba(236,72,153,0.22)',
           fontSize: 10, fontWeight: 700, letterSpacing: '0.06em',
-          textTransform: 'uppercase', color: '#D08380',
+          textTransform: 'uppercase', color: '#EC4899',
           marginBottom: 12
         }}>🔥 Trending Now</div>
         <h2 className="section-title" style={{ margin: '0 0 6px' }}>Trending Startups</h2>
-        <p className="section-sub" style={{ margin: '0 auto 16px', maxWidth: 480 }}>Hand-picked by our editorial team — the ones to watch this week</p>
+        <p className="section-sub" style={{ margin: '0 auto 24px', maxWidth: 480 }}>Hand-picked by our editorial team — the ones to watch this week</p>
       </div>
 
-      {/* MAIN 70 / 30 */}
+      {/* TRENDING GRID — small cards */}
       <div style={{
         maxWidth: 1320, margin: '0 auto',
-        display: 'grid', gridTemplateColumns: '70% 30%', gap: 48, alignItems: 'center'
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))',
+        gap: 18
       }}>
-
-        {/* LEFT — SINGLE CARD PLAYER (70%) */}
-        <div style={{ position: 'relative', height: 540 }}>
-          {trending.map((startup, i) => {
-            const img = startup.coverImageUrl || [
-              'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=1200&q=80',
-              'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80',
-              'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80',
-              'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1200&q=80',
-              'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80'
-            ][i % 5];
-            const isActive = i === active;
-            const isPrev = i === (active - 1 + trending.length) % trending.length;
-            const isNext = i === (active + 1) % trending.length;
-
-            return (
-              <div key={startup._id || startup.id} style={{
-                position: 'absolute', inset: 0,
-                opacity: isActive ? 1 : 0,
-                transform: isActive
-                  ? 'translateX(0) scale(1)'
-                  : isPrev
-                    ? 'translateX(-80px) scale(0.95)'
-                    : 'translateX(80px) scale(0.95)',
-                transition: 'all 0.85s cubic-bezier(0.22, 1, 0.36, 1)',
-                pointerEvents: isActive ? 'auto' : 'none',
-                borderRadius: 24,
+        {trending.map((startup, idx) => {
+          const img = startup.coverImageUrl || [
+            'https://images.unsplash.com/photo-1559136555-9303baea8ebd?auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=600&q=80',
+            'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=80'
+          ][idx % 5];
+          return (
+            <div key={startup._id || startup.id || idx}
+              onClick={() => navigate(`/startups/${startup.slug}`)}
+              style={{
+                borderRadius: 14,
                 overflow: 'hidden',
-                background: '#0A0A0C',
-                border: '1px solid rgba(255,255,255,0.08)',
-                boxShadow: '0 30px 80px rgba(0,0,0,0.45)'
+                background: '#141418',
+                border: '1px solid rgba(255,255,255,0.06)',
+                cursor: 'pointer',
+                transition: 'all 0.3s ease',
+                position: 'relative'
+              }}
+              onMouseEnter={e => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.boxShadow = '0 12px 30px rgba(0,0,0,0.4)';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)';
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)';
+              }}
+            >
+              {/* Image */}
+              <div style={{
+                height: 120,
+                backgroundImage: `url(${img})`,
+                backgroundSize: 'cover', backgroundPosition: 'center',
+                position: 'relative'
               }}>
-                {/* Cover image fills the card */}
                 <div style={{
                   position: 'absolute', inset: 0,
-                  backgroundImage: `url(${img})`,
-                  backgroundSize: 'cover', backgroundPosition: 'center',
-                  opacity: isActive ? 0.6 : 0.3,
-                  transition: 'opacity 0.85s ease',
-                  transform: isActive ? 'scale(1.03)' : 'scale(1)',
+                  background: 'linear-gradient(180deg, transparent 40%, rgba(20,20,24,0.9) 100%)'
                 }} />
-                {/* Dark overlay */}
+                <span style={{
+                  position: 'absolute', top: 8, left: 8,
+                  padding: '3px 8px', borderRadius: 6,
+                  background: 'rgba(236,72,153,0.2)', color: '#EC4899',
+                  fontSize: 9, fontWeight: 700, letterSpacing: '0.06em',
+                  textTransform: 'uppercase', border: '1px solid rgba(236,72,153,0.3)'
+                }}>🔥</span>
+              </div>
+              {/* Info */}
+              <div style={{ padding: '12px 14px 16px' }}>
                 <div style={{
-                  position: 'absolute', inset: 0,
-                  background: 'linear-gradient(180deg, rgba(10,10,12,0.25) 0%, rgba(10,10,12,0.65) 45%, rgba(10,10,12,0.92) 100%)'
-                }} />
-
-                {/* Card content */}
+                  fontSize: 13, fontWeight: 800, color: '#fff',
+                  letterSpacing: '-0.01em', lineHeight: 1.3,
+                  whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis'
+                }}>{startup.name}</div>
                 <div style={{
-                  position: 'relative', zIndex: 2,
-                  height: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
-                  padding: '40px 44px'
+                  fontSize: 10, color: 'rgba(255,255,255,0.4)', marginTop: 4,
+                  textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 600
+                }}>{startup.category}</div>
+                <div style={{
+                  display: 'flex', gap: 10, marginTop: 8,
+                  fontSize: 11, color: 'rgba(255,255,255,0.5)'
                 }}>
-                  {/* Startup info */}
-                  <div>
-                    <div style={{
-                      fontSize: 30, fontWeight: 900, color: '#fff',
-                      marginBottom: 10, letterSpacing: '-0.02em', lineHeight: 1.08
-                    }}>{startup.name}</div>
-                    <div style={{
-                      fontSize: 15, color: 'rgba(255,255,255,0.6)', lineHeight: 1.6,
-                      marginBottom: 22, maxWidth: 500
-                    }}>{startup.tagline}</div>
-                    <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', marginBottom: 26 }}>
-                      {startup.tags?.slice(0, 3).map(t => (
-                        <span key={t} style={{
-                          fontSize: 11, fontWeight: 600, color: 'rgba(255,255,255,0.65)',
-                          background: 'rgba(255,255,255,0.06)', padding: '5px 12px',
-                          borderRadius: 8, border: '1px solid rgba(255,255,255,0.08)'
-                        }}>{t}</span>
-                      ))}
-                    </div>
-                    <button onClick={() => navigate(`/startups/${startup.slug}`)} style={{
-                      padding: '12px 28px', borderRadius: 24,
-                      background: 'linear-gradient(135deg, #D08380 0%, #FBA39B 100%)',
-                      color: '#fff', fontSize: 14, fontWeight: 700,
-                      border: 'none', cursor: 'pointer',
-                      boxShadow: '0 4px 20px rgba(208,131,128,0.35)',
-                      transition: 'all 0.3s'
-                    }}>Explore Startup →</button>
-                  </div>
+                  <span>{startup.raised}</span>
+                  <span>•</span>
+                  <span>{startup.upvoteCount?.toLocaleString()} ▲</span>
                 </div>
               </div>
-            );
-          })}
-
-          {/* Dot nav inside the card area */}
-          <div style={{
-            position: 'absolute', bottom: 20, left: '50%', transform: 'translateX(-50%)',
-            zIndex: 10,
-            display: 'flex', gap: 8, alignItems: 'center'
-          }}>
-            {trending.map((_, i) => (
-              <button key={i} onClick={() => setActive(i)} style={{
-                width: i === active ? 28 : 8, height: 8, borderRadius: 4,
-                background: i === active ? '#D08380' : 'rgba(255,255,255,0.25)',
-                border: 'none', cursor: 'pointer',
-                transition: 'all 0.4s ease'
-              }} />
-            ))}
-          </div>
-        </div>
-
-        {/* RIGHT — INFO PANEL (30%) */}
-        <div>
-          {/* Category + Stage */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 20 }}>
-            <div style={{
-              width: 10, height: 10, borderRadius: '50%',
-              background: s.color || '#D08380',
-              boxShadow: `0 0 12px ${s.color || '#D08380'}40`
-            }} />
-            <span style={{
-              fontSize: 11, fontWeight: 700, letterSpacing: '0.06em',
-              textTransform: 'uppercase', color: 'var(--tx2)'
-            }}>{s.category}</span>
-          </div>
-
-          {/* Name */}
-          <h3 style={{
-            fontSize: 'clamp(22px, 2.5vw, 30px)', fontWeight: 900,
-            lineHeight: 1.1, letterSpacing: '-0.03em',
-            color: 'var(--tx0)', marginBottom: 12
-          }}>{s.name}</h3>
-
-          {/* Tagline */}
-          <p style={{
-            fontSize: 14, lineHeight: 1.6, color: 'var(--tx1)',
-            marginBottom: 24
-          }}>{s.tagline}</p>
-
-          {/* Stats */}
-          <div style={{
-            display: 'flex', gap: 24, marginBottom: 24,
-            padding: '16px 0',
-            borderTop: '1px solid var(--border)', borderBottom: '1px solid var(--border)'
-          }}>
-            <div>
-              <div style={{ fontSize: 20, fontWeight: 900, color: 'var(--tx0)', fontFamily: "'Space Grotesk', sans-serif" }}>{s.raised}</div>
-              <div style={{ fontSize: 10, color: 'var(--tx2)', marginTop: 3, fontWeight: 600 }}>Raised</div>
             </div>
-            <div>
-              <div style={{ fontSize: 20, fontWeight: 900, color: 'var(--tx0)', fontFamily: "'Space Grotesk', sans-serif" }}>{s.upvoteCount?.toLocaleString()}</div>
-              <div style={{ fontSize: 10, color: 'var(--tx2)', marginTop: 3, fontWeight: 600 }}>Upvotes</div>
-            </div>
-            <div>
-              <div style={{ fontSize: 20, fontWeight: 900, color: 'var(--tx0)', fontFamily: "'Space Grotesk', sans-serif" }}>{s.teamSize}</div>
-              <div style={{ fontSize: 10, color: 'var(--tx2)', marginTop: 3, fontWeight: 600 }}>Team</div>
-            </div>
-          </div>
-
-          {/* Tags */}
-          <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 24 }}>
-            {s.tags?.map(t => (
-              <span key={t} style={{
-                fontSize: 10, fontWeight: 600, color: 'var(--tx1)',
-                background: 'var(--bg1)', padding: '5px 10px',
-                borderRadius: 6, border: '1px solid var(--border)'
-              }}>{t}</span>
-            ))}
-          </div>
-
-          {/* CTAs */}
-          <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
-            <button onClick={() => navigate(`/startups/${s.slug}`)} style={{
-              padding: '10px 22px', borderRadius: 22,
-              background: 'linear-gradient(135deg, #D08380 0%, #FBA39B 100%)',
-              color: '#fff', fontSize: 13, fontWeight: 700,
-              border: 'none', cursor: 'pointer',
-              boxShadow: '0 4px 14px rgba(208,131,128,0.3)',
-              transition: 'all 0.3s'
-            }}>View Profile →</button>
-            <button onClick={() => navigate('/startups')} style={{
-              padding: '10px 22px', borderRadius: 22,
-              background: 'transparent',
-              color: 'var(--tx0)', fontSize: 13, fontWeight: 700,
-              border: '1px solid var(--border)', cursor: 'pointer',
-              transition: 'all 0.3s'
-            }}>Explore All</button>
-          </div>
-
-          {/* Dots */}
-          <div style={{ display: 'flex', gap: 8, marginTop: 32 }}>
-            {trending.map((_, i) => (
-              <button key={i} onClick={() => setActive(i)} style={{
-                width: i === active ? 28 : 8, height: 8, borderRadius: 4,
-                background: i === active ? '#D08380' : 'var(--border)',
-                border: 'none', cursor: 'pointer',
-                transition: 'all 0.4s ease'
-              }} />
-            ))}
-          </div>
-        </div>
+          );
+        })}
       </div>
 
       {/* BROWSE ALL CTA */}
-      <div style={{ maxWidth: 1320, margin: '48px auto 0', textAlign: 'center' }}>
+      <div style={{ maxWidth: 1320, margin: '40px auto 0', textAlign: 'center' }}>
         <button onClick={() => navigate('/startups')} style={{
-          padding: '14px 36px', borderRadius: 28,
-          background: 'transparent',
-          color: 'var(--tx0)', fontSize: 14, fontWeight: 700,
-          border: '2px solid var(--border)', cursor: 'pointer',
+          padding: '12px 28px', borderRadius: 24,
+          background: 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)',
+          color: '#fff', fontSize: 13, fontWeight: 700,
+          border: 'none', cursor: 'pointer',
+          boxShadow: '0 4px 18px rgba(236,72,153,0.4)',
           transition: 'all 0.3s'
-        }}>Browse All Startups</button>
+        }}>Browse All Startups →</button>
       </div>
 
       {/* ─── BROWSE BY CATEGORY — BLACK CARD ─── */}
@@ -356,7 +231,7 @@ function WalletStack({ startups, allStartups, navigate }) {
                 border: '1px solid rgba(255,255,255,0.1)',
                 color: '#fff', fontSize: 14, fontWeight: 500,
                 outline: 'none',
-                fontFamily: "'Space Grotesk', sans-serif",
+                fontFamily: 'Arial, sans-serif',
                 textAlign: 'center'
               }}
             />
@@ -373,7 +248,7 @@ function WalletStack({ startups, allStartups, navigate }) {
             {allCats.map(cat => (
               <button key={cat} onClick={() => setBrowseCat(cat)} style={{
                 padding: '7px 14px', borderRadius: 20,
-                background: browseCat === cat ? 'linear-gradient(135deg, #D08380 0%, #FBA39B 100%)' : 'rgba(255,255,255,0.05)',
+                background: browseCat === cat ? 'linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%)' : 'rgba(255,255,255,0.05)',
                 color: '#fff', fontSize: 12, fontWeight: 700,
                 border: `1px solid ${browseCat === cat ? 'transparent' : 'rgba(255,255,255,0.1)'}`,
                 cursor: 'pointer',
@@ -498,10 +373,10 @@ function HackathonCarousel({ hackathons, navigate }) {
         <div style={{
           display: 'inline-flex', alignItems: 'center', gap: 6,
           padding: '5px 12px', borderRadius: 20,
-          background: 'rgba(251, 163, 155, 0.12)',
-          border: '1px solid rgba(251, 163, 155, 0.22)',
+          background: 'rgba(34,211,238,0.12)',
+          border: '1px solid rgba(34,211,238,0.22)',
           fontSize: 10, fontWeight: 700, letterSpacing: '0.06em',
-          textTransform: 'uppercase', color: '#D08380',
+          textTransform: 'uppercase', color: '#22D3EE',
           marginBottom: 12
         }}>⚡ Build & Win</div>
         <h2 className="section-title" style={{ margin: '0 0 6px' }}>Trending Hackathons</h2>
@@ -534,7 +409,7 @@ function HackathonCarousel({ hackathons, navigate }) {
                   boxShadow: '0 12px 40px rgba(0,0,0,0.35)',
                   display: 'flex', flexDirection: 'column', gap: 0,
                   position: 'relative',
-                  fontFamily: "'Space Grotesk', sans-serif"
+                  fontFamily: 'Arial, sans-serif'
                 }}>
                 {/* ── TOP RULE ── */}
                 <div style={{
@@ -611,7 +486,7 @@ function HackathonCarousel({ hackathons, navigate }) {
                         marginBottom: 6
                       }}>Prize Pool</div>
                       <div style={{
-                        fontFamily: "'Space Grotesk', sans-serif",
+                        fontFamily: 'Arial, sans-serif',
                         fontSize: 16, fontWeight: 700,
                         color: '#fff'
                       }}>{h.prizePool || '$0'}</div>
@@ -699,7 +574,7 @@ function HackathonCarousel({ hackathons, navigate }) {
         {Array.from({ length: totalSets }).map((_, i) => (
           <button key={i} onClick={() => setActive(i)} style={{
             width: i === safeActive ? 28 : 8, height: 8, borderRadius: 4,
-            background: i === safeActive ? '#D08380' : 'rgba(0,0,0,0.2)',
+            background: i === safeActive ? '#F59E0B' : 'rgba(0,0,0,0.2)',
             border: 'none', cursor: 'pointer',
             transition: 'all 0.4s ease'
           }} />
@@ -815,7 +690,7 @@ function HeroCarousel({ navigate }) {
             }}>
               <div style={{
                 width: 38, height: 38, borderRadius: 10,
-                background: 'linear-gradient(135deg, #D08380 0%, #FBA39B 100%)',
+                background: 'linear-gradient(135deg, #F43F5E 0%, #EC4899 100%)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 fontSize: 14, color: '#fff', fontWeight: 700
               }}>{s.statLabel.charAt(0)}</div>
@@ -829,10 +704,10 @@ function HeroCarousel({ navigate }) {
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
               padding: '5px 12px', borderRadius: 20,
-              background: 'rgba(208,131,128,0.15)',
-              border: '1px solid rgba(208,131,128,0.28)',
+              background: 'rgba(245,158,11,0.15)',
+              border: '1px solid rgba(245,158,11,0.28)',
               fontSize: 10, fontWeight: 700, letterSpacing: '0.06em',
-              textTransform: 'uppercase', color: '#FBA39B',
+              textTransform: 'uppercase', color: '#F59E0B',
               marginBottom: 24, alignSelf: 'flex-start'
             }}>
               ⚡ {s.label} Focus
@@ -859,10 +734,10 @@ function HeroCarousel({ navigate }) {
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               <button onClick={() => navigate(s.cta1.route)} style={{
                 padding: '12px 28px', borderRadius: 26,
-                background: 'linear-gradient(135deg, #D08380 0%, #FBA39B 100%)',
+                background: 'linear-gradient(135deg, #10B981 0%, #34D399 100%)',
                 color: '#fff', fontSize: 14, fontWeight: 700,
                 border: 'none', cursor: 'pointer',
-                boxShadow: '0 4px 20px rgba(208,131,128,0.35)',
+                boxShadow: '0 4px 20px rgba(16,185,129,0.35)',
                 transition: 'all 0.3s'
               }}>{s.cta1.text}</button>
               <button onClick={() => navigate(s.cta2.route)} style={{
@@ -884,14 +759,14 @@ function HeroCarousel({ navigate }) {
           {slides.map((_, i) => (
             <button key={i} onClick={() => setActive(i)} style={{
               width: i === active ? 28 : 8, height: 8, borderRadius: 4,
-              background: i === active ? '#D08380' : 'rgba(255,255,255,0.25)',
+              background: i === active ? '#F43F5E' : 'rgba(255,255,255,0.25)',
               border: 'none', cursor: 'pointer',
               transition: 'all 0.4s ease'
             }} />
           ))}
           <span style={{
             fontSize: 12, fontWeight: 700, color: 'rgba(255,255,255,0.30)',
-            marginLeft: 10, fontFamily: "'Space Grotesk', sans-serif", letterSpacing: '0.05em'
+            marginLeft: 10, fontFamily: 'Arial, sans-serif', letterSpacing: '0.05em'
           }}>0{active + 1} / 0{slides.length}</span>
         </div>
       </div>
@@ -942,9 +817,9 @@ export default function Home() {
           {/* CENTERED HEADER */}
           <div style={{ textAlign: 'center', marginBottom: 48 }}>
             <span className="chip" style={{
-              background: 'rgba(251, 163, 155, 0.1)',
-              color: 'var(--salmon-light)',
-              border: '1px solid rgba(251, 163, 155, 0.22)',
+              background: 'rgba(99, 102, 241, 0.1)',
+              color: 'var(--accent-light)',
+              border: '1px solid rgba(99, 102, 241, 0.22)',
               marginBottom: 12
             }}>🏢 COE ACCELERATION</span>
             <h2 className="section-title" style={{ marginTop: 12, color: '#fff' }}>Enterprise Services for Startups</h2>
@@ -982,7 +857,7 @@ export default function Home() {
                 <div className="flex justify-between items-center" style={{ paddingTop: 20, borderTop: '1px solid rgba(10,10,12,0.1)' }}>
                   <div>
                     <div style={{ fontSize: 10, color: '#6B7280', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Starting From</div>
-                    <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 22, fontWeight: 900, color: '#1A1A1D', marginTop: 4 }}>
+                    <div style={{ fontFamily: 'Arial, sans-serif', fontSize: 22, fontWeight: 900, color: '#1A1A1D', marginTop: 4 }}>
                       {s.price}
                     </div>
                   </div>

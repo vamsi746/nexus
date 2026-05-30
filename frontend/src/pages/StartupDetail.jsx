@@ -133,7 +133,7 @@ export default function StartupDetail() {
               <Avatar initials={startup.initials || startup.name?.slice(0, 2).toUpperCase()} color={startup.color || '#7C6EFA'} size={72} radius={16} />
               <div style={{ flex: 1 }}>
                 <div style={{ display: 'flex', gap: 10, alignItems: 'center', flexWrap: 'wrap', marginBottom: 6 }}>
-                  <h1 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 800, color: 'var(--tx0)' }}>
+                  <h1 style={{ fontFamily: 'Arial, sans-serif', fontSize: 28, fontWeight: 800, color: 'var(--tx0)' }}>
                     {startup.name}
                   </h1>
                   {startup.verified && <span className="chip" style={{ background: 'rgba(52,211,153,0.1)', color: '#34D399', border: '1px solid rgba(52,211,153,0.25)', fontSize: 10 }}>✓ Verified Profile</span>}
@@ -152,7 +152,7 @@ export default function StartupDetail() {
           </div>
           <div style={{ padding: '28px 32px', display: 'flex', flexDirection: 'column', gap: 24 }}>
             <div>
-              <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 19, fontWeight: 700, marginBottom: 12, color: 'var(--tx0)' }}>
+              <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 19, fontWeight: 700, marginBottom: 12, color: 'var(--tx0)' }}>
                 {startup.tagline}
               </h3>
               <p style={{ fontSize: 14, color: 'var(--tx1)', lineHeight: 1.7 }}>
@@ -221,7 +221,7 @@ export default function StartupDetail() {
                         {c.userEmail}
                         <span className="chip" style={{
                           background: c.userRole === 'Founder' ? 'rgba(52,211,153,0.1)' : c.userRole === 'Admin' ? 'rgba(251,113,133,0.1)' : 'rgba(124,110,250,0.1)',
-                          color: c.userRole === 'Founder' ? '#34D399' : c.userRole === 'Admin' ? '#FB7185' : 'var(--salmon-light)',
+                          color: c.userRole === 'Founder' ? '#34D399' : c.userRole === 'Admin' ? '#FB7185' : 'var(--accent-light)',
                           fontSize: 9, marginLeft: 8
                         }}>{c.userRole}</span>
                       </span>
@@ -242,17 +242,17 @@ export default function StartupDetail() {
         
         {/* Startup Statistics metrics (StartupTracker style) */}
         <Card style={{ padding: 24 }}>
-          <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Startup Performance Data</h3>
+          <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Startup Performance Data</h3>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
             {[
-              ['FUNDING STAGE', startup.stage || 'Seed', 'var(--salmon-light)'],
+              ['FUNDING STAGE', startup.stage || 'Seed', 'var(--accent-light)'],
               ['TEAM SIZE', `${startup.teamSize || startup.team || 12} people`, 'var(--tx0)'],
               ['RAISED BUDGET', startup.raised || '$2.4M', '#34D399'],
               ['UPVOTE COUNT', hasUpvoted ? startup.upvoteCount : (startup.upvoteCount || 0), '#FCD34D'],
             ].map(([l, v, c]) => (
               <div key={l} style={{ background: 'var(--bg2)', borderRadius: 10, padding: 12, textAlign: 'center', border: '1px solid var(--border)' }}>
                 <div style={{ fontSize: 9, color: 'var(--tx2)', marginBottom: 4 }}>{l}</div>
-                <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 800, color: c }}>{v}</div>
+                <div style={{ fontFamily: 'Arial, sans-serif', fontSize: 16, fontWeight: 800, color: c }}>{v}</div>
               </div>
             ))}
           </div>
@@ -265,10 +265,10 @@ export default function StartupDetail() {
         {/* Early Adopter Rewards Panel (GetWorm Style) */}
         <Card style={{
           background: 'linear-gradient(135deg, rgba(34,211,238,0.06) 0%, rgba(124,110,250,0.06) 100%)',
-          border: '1px solid var(--border-salmon)', padding: 24, textAlign: 'center'
+          border: '1px solid var(--border-accent)', padding: 24, textAlign: 'center'
         }}>
           <div style={{ fontSize: 24, marginBottom: 8 }}>🎁</div>
-          <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 16, fontWeight: 700, color: '#22D3EE' }}>GetWorm Early Adopter Reward</h3>
+          <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 16, fontWeight: 700, color: '#22D3EE' }}>GetWorm Early Adopter Reward</h3>
           <p style={{ fontSize: 12, color: 'var(--tx1)', margin: '8px 0 16px', lineHeight: 1.5 }}>
             Are you an early tester? Startup offers <b>30% discount</b> or <b>exclusive beta access</b> for the first 100 Nexus adopters.
           </p>
@@ -279,11 +279,11 @@ export default function StartupDetail() {
             </button>
           ) : (
             <div style={{
-              background: 'var(--bg2)', border: '2px dashed var(--border-salmon)',
+              background: 'var(--bg2)', border: '2px dashed var(--border-accent)',
               borderRadius: 10, padding: '12px 10px', marginTop: 12, animation: 'pulse 1.5s infinite ease-in-out'
             }}>
               <span style={{ fontSize: 10, color: 'var(--tx2)', display: 'block', marginBottom: 2 }}>PROMO COUPON CODE:</span>
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 18, fontWeight: 800, color: '#34D399', letterSpacing: '0.08em' }}>
+              <span style={{ fontFamily: 'Arial, sans-serif', fontSize: 18, fontWeight: 800, color: '#34D399', letterSpacing: '0.08em' }}>
                 NEXUS-EARLY-30
               </span>
             </div>
@@ -297,8 +297,8 @@ export default function StartupDetail() {
           position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
           background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1100, padding: 24
         }}>
-          <div style={{ background: 'var(--bg2)', border: '1px solid var(--border-salmon)', borderRadius: 16, padding: 28, maxWidth: 500, width: '100%' }}>
-            <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 6 }}>Message Founder of {startup.name}</h3>
+          <div style={{ background: 'var(--bg2)', border: '1px solid var(--border-accent)', borderRadius: 16, padding: 28, maxWidth: 500, width: '100%' }}>
+            <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 6 }}>Message Founder of {startup.name}</h3>
             <p style={{ fontSize: 12, color: 'var(--tx2)', marginBottom: 16 }}>Ask questions, pitch collaborations, or discuss investments directly.</p>
             
             {messageSuccess ? (

@@ -257,7 +257,7 @@ export default function Dashboard() {
                 <span style={{ fontSize: 13, color: 'var(--tx2)', fontWeight: 600 }}>{s.label}</span>
                 <span style={{ fontSize: 20 }}>{s.icon}</span>
               </div>
-              <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 28, fontWeight: 800, color: 'var(--tx0)', marginTop: 8 }}>
+              <div style={{ fontFamily: 'Arial, sans-serif', fontSize: 28, fontWeight: 800, color: 'var(--tx0)', marginTop: 8 }}>
                 {s.val}
               </div>
             </Card>
@@ -320,7 +320,7 @@ export default function Dashboard() {
                           {s.verified ? 'Verified' : 'Pending'}
                         </span>
                         {s.isTrending && (
-                          <span className="chip" style={{ background: 'rgba(208,131,128,0.12)', color: '#D08380', border: '1px solid rgba(208,131,128,0.25)', fontSize: 10 }}>
+                          <span className="chip" style={{ background: 'rgba(99,102,241,0.12)', color: '#818CF8', border: '1px solid rgba(99,102,241,0.25)', fontSize: 10 }}>
                             🔥 Trending
                           </span>
                         )}
@@ -359,7 +359,7 @@ export default function Dashboard() {
                         <b>{h.startupName}</b> &middot; Prize: {h.prizePool} &middot; Status: <span style={{ color: h.status === 'open' ? '#34D399' : '#FCD34D' }}>{h.status?.toUpperCase()}</span>
                       </div>
                       {h.isTrending && (
-                        <span className="chip" style={{ background: 'rgba(208,131,128,0.12)', color: '#D08380', border: '1px solid rgba(208,131,128,0.25)', fontSize: 10, marginTop: 4 }}>
+                        <span className="chip" style={{ background: 'rgba(99,102,241,0.12)', color: '#818CF8', border: '1px solid rgba(99,102,241,0.25)', fontSize: 10, marginTop: 4 }}>
                           🔥 Trending
                         </span>
                       )}
@@ -406,10 +406,10 @@ export default function Dashboard() {
             <h2 className="section-title" style={{ marginBottom: 16 }}>Enterprise Service Orders ({orders.length})</h2>
             <div style={{ display: 'grid', gap: 12 }}>
               {orders.map(o => (
-                <Card key={o._id} style={{ borderLeft: '3px solid var(--salmon)' }}>
+                <Card key={o._id} style={{ borderLeft: '3px solid var(--accent)' }}>
                   <div className="flex justify-between items-start" style={{ marginBottom: 8 }}>
                     <div>
-                      <span className="chip" style={{ background: 'var(--salmon-dim)', color: 'var(--salmon-light)', fontSize: 10 }}>{o.serviceType?.toUpperCase()}</span>
+                      <span className="chip" style={{ background: 'var(--accent-dim)', color: 'var(--accent-light)', fontSize: 10 }}>{o.serviceType?.toUpperCase()}</span>
                       <h4 style={{ fontSize: 16, fontWeight: 700, marginTop: 6 }}>{o.title || 'Custom Engagement'}</h4>
                       <p style={{ fontSize: 11, color: 'var(--tx2)', marginTop: 4 }}>
                         Requested by: <b>{o.startupId?.name || 'Startup Company'}</b>
@@ -460,7 +460,7 @@ export default function Dashboard() {
           </Card>
           <Card style={{ borderLeft: '3px solid #7C6EFA' }}>
             <span style={{ fontSize: 12, color: 'var(--tx2)', fontWeight: 600 }}>TOTAL SERVICE REQUESTS</span>
-            <div style={{ fontSize: 32, fontWeight: 800, color: 'var(--salmon-light)', marginTop: 6 }}>{stats?.orders || 0} Inquiries</div>
+            <div style={{ fontSize: 32, fontWeight: 800, color: 'var(--accent-light)', marginTop: 6 }}>{stats?.orders || 0} Inquiries</div>
             <p style={{ fontSize: 11, color: 'var(--tx2)', marginTop: 8 }}>From brand kits to software deployment scale</p>
           </Card>
           <Card style={{ borderLeft: '3px solid #FCD34D' }}>
@@ -478,7 +478,7 @@ export default function Dashboard() {
               <Card key={o._id} style={{ position: 'relative' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 12, marginBottom: 10 }}>
                   <div>
-                    <span className="chip" style={{ background: 'var(--salmon-dim)', color: 'var(--salmon-light)', fontSize: 10 }}>
+                    <span className="chip" style={{ background: 'var(--accent-dim)', color: 'var(--accent-light)', fontSize: 10 }}>
                       {o.serviceType?.toUpperCase()}
                     </span>
                     <h3 style={{ fontSize: 17, fontWeight: 700, marginTop: 6 }}>{o.title || 'Custom Service Execution'}</h3>
@@ -515,7 +515,7 @@ export default function Dashboard() {
       <div>
         <div className="flex justify-between items-center" style={{ marginBottom: 32 }}>
           <div>
-            <span className="chip" style={{ background: 'var(--salmon-dim)', color: 'var(--salmon-light)' }}>🚀 Founder Portal</span>
+            <span className="chip" style={{ background: 'var(--accent-dim)', color: 'var(--accent-light)' }}>🚀 Founder Portal</span>
             <h1 style={{ fontSize: 32, fontWeight: 800, marginTop: 10 }}>
               {myStartup ? myStartup.name : 'List Your Startup'}
             </h1>
@@ -540,7 +540,7 @@ export default function Dashboard() {
                     <span style={{ fontSize: 11, color: 'var(--tx2)', fontWeight: 600 }}>{s.label}</span>
                     <span style={{ color: s.color }}>{s.icon}</span>
                   </div>
-                  <div style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 24, fontWeight: 800, marginTop: 6 }}>
+                  <div style={{ fontFamily: 'Arial, sans-serif', fontSize: 24, fontWeight: 800, marginTop: 6 }}>
                     {s.val}
                   </div>
                 </Card>
@@ -687,7 +687,7 @@ export default function Dashboard() {
       <div>
         <div className="flex justify-between items-center" style={{ marginBottom: 32 }}>
           <div>
-            <span className="chip" style={{ background: 'var(--salmon-dim)', color: 'var(--salmon-light)' }}>🎓 Student Workspace</span>
+            <span className="chip" style={{ background: 'var(--accent-dim)', color: 'var(--accent-light)' }}>🎓 Student Workspace</span>
             <h1 style={{ fontSize: 32, fontWeight: 800, marginTop: 10 }}>My Portfolio Workspace</h1>
           </div>
           <div className="flex gap-2">
@@ -785,8 +785,8 @@ export default function Dashboard() {
         position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
         background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1100, padding: 24
       }}>
-        <div style={{ background: 'var(--bg2)', border: '1px solid var(--border-salmon)', borderRadius: 16, padding: 28, maxWidth: 500, width: '100%' }}>
-          <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 16 }}>Update Service Quotation</h3>
+        <div style={{ background: 'var(--bg2)', border: '1px solid var(--border-accent)', borderRadius: 16, padding: 28, maxWidth: 500, width: '100%' }}>
+          <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>Update Service Quotation</h3>
           <form onSubmit={updateOrder}>
             <div className="form-group" style={{ marginBottom: 16 }}>
               <label className="form-label">Invoiced Budget Price ($ USD)</label>
@@ -818,8 +818,8 @@ export default function Dashboard() {
         position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
         background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1100, padding: 24
       }}>
-        <div style={{ background: 'var(--bg2)', border: '1px solid var(--border-salmon)', borderRadius: 16, padding: 28, maxWidth: 500, width: '100%' }}>
-          <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 16 }}>Post New Hiring Opportunity</h3>
+        <div style={{ background: 'var(--bg2)', border: '1px solid var(--border-accent)', borderRadius: 16, padding: 28, maxWidth: 500, width: '100%' }}>
+          <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>Post New Hiring Opportunity</h3>
           <form onSubmit={createOpportunity}>
             <div className="form-group" style={{ marginBottom: 12 }}>
               <label className="form-label">Position Title</label>
@@ -869,8 +869,8 @@ export default function Dashboard() {
         position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
         background: 'rgba(0,0,0,0.85)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1100, padding: 24
       }}>
-        <div style={{ background: 'var(--bg2)', border: '1px solid var(--border-salmon)', borderRadius: 16, padding: 28, maxWidth: 500, width: '100%' }}>
-          <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: 20, fontWeight: 700, marginBottom: 16 }}>Host Sponsored Global Hackathon</h3>
+        <div style={{ background: 'var(--bg2)', border: '1px solid var(--border-accent)', borderRadius: 16, padding: 28, maxWidth: 500, width: '100%' }}>
+          <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 16 }}>Host Sponsored Global Hackathon</h3>
           <form onSubmit={createHackathon}>
             <div className="form-group" style={{ marginBottom: 12 }}>
               <label className="form-label">Hackathon Event Title</label>

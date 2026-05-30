@@ -136,7 +136,7 @@ export default function Profile() {
       {user.role === 'student' && (
         <Card>
           <div className="flex gap-3 items-center" style={{ marginBottom: 24, paddingBottom: 16, borderBottom: '1px solid var(--border)' }}>
-            <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--salmon-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🎓</div>
+            <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--accent-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🎓</div>
             <div>
               <h2 style={{ fontSize: 18, fontWeight: 700 }}>Student Member Information</h2>
               <span style={{ fontSize: 11, color: 'var(--tx2)' }}>Account Email: {user.email}</span>
@@ -203,7 +203,7 @@ export default function Profile() {
             </div>
 
             <div style={{ display: 'flex', gap: 8, alignItems: 'center', marginBottom: 24 }}>
-              <input type="checkbox" id="openworkprofile" style={{ width: 'auto', accentColor: 'var(--salmon)' }} checked={studentForm.isOpenToWork} onChange={e => setStudentForm({ ...studentForm, isOpenToWork: e.target.checked })} />
+              <input type="checkbox" id="openworkprofile" style={{ width: 'auto', accentColor: 'var(--accent)' }} checked={studentForm.isOpenToWork} onChange={e => setStudentForm({ ...studentForm, isOpenToWork: e.target.checked })} />
               <label htmlFor="openworkprofile" style={{ fontSize: 13, color: 'var(--tx1)', cursor: 'pointer' }}>I'm open to internship and job opportunities</label>
             </div>
 
@@ -216,7 +216,7 @@ export default function Profile() {
       {user.role === 'startup_admin' && (
         <Card>
           <div className="flex gap-3 items-center" style={{ marginBottom: 24, paddingBottom: 16, borderBottom: '1px solid var(--border)' }}>
-            <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--salmon-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🚀</div>
+            <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--accent-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🚀</div>
             <div>
               <h2 style={{ fontSize: 18, fontWeight: 700 }}>Startup Profile Information</h2>
               <span style={{ fontSize: 11, color: 'var(--tx2)' }}>Authorized Founder: {user.email}</span>
@@ -296,7 +296,7 @@ export default function Profile() {
       {(user.role === 'admin' || user.role === 'service_provider') && (
         <Card>
           <div className="flex gap-3 items-center" style={{ marginBottom: 20 }}>
-            <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--salmon-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🔒</div>
+            <div style={{ width: 48, height: 48, borderRadius: '50%', background: 'var(--accent-dim)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22 }}>🔒</div>
             <div>
               <h2 style={{ fontSize: 18, fontWeight: 700 }}>Management Account</h2>
               <span style={{ fontSize: 11, color: 'var(--tx2)' }}>Role: <b>{user.role?.toUpperCase()}</b></span>
