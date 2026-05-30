@@ -158,7 +158,7 @@ export default function Profile() {
               <input value={studentForm.university} onChange={e => setStudentForm({ ...studentForm, university: e.target.value })} required />
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 16, marginBottom: 16 }}>
               <div className="form-group">
                 <label className="form-label">Degree</label>
                 <select value={studentForm.degree} onChange={e => setStudentForm({ ...studentForm, degree: e.target.value })}>
@@ -171,7 +171,7 @@ export default function Profile() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 16, marginBottom: 16 }}>
               <div className="form-group">
                 <label className="form-label">Major / Field of Study</label>
                 <input value={studentForm.major} onChange={e => setStudentForm({ ...studentForm, major: e.target.value })} required />
@@ -187,7 +187,7 @@ export default function Profile() {
               <input placeholder="Python, React, TypeScript, Figma" value={studentForm.skills} onChange={e => setStudentForm({ ...studentForm, skills: e.target.value })} />
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 20 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12, marginBottom: 20 }}>
               <div className="form-group">
                 <label className="form-label">GitHub URL</label>
                 <input placeholder="github.com/username" value={studentForm.githubUrl} onChange={e => setStudentForm({ ...studentForm, githubUrl: e.target.value })} />
@@ -223,7 +223,7 @@ export default function Profile() {
             </div>
           </div>
           <form onSubmit={handleStartupSubmit}>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 16, marginBottom: 16 }}>
               <div className="form-group">
                 <label className="form-label">Startup Name</label>
                 <input value={startupForm.name} onChange={e => setStartupForm({ ...startupForm, name: e.target.value })} required />
@@ -244,7 +244,7 @@ export default function Profile() {
               <textarea style={{ height: 110, resize: 'vertical' }} value={startupForm.description} onChange={e => setStartupForm({ ...startupForm, description: e.target.value })} required />
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 16, marginBottom: 16 }}>
               <div className="form-group">
                 <label className="form-label">Startup Stage</label>
                 <select value={startupForm.stage} onChange={e => setStartupForm({ ...startupForm, stage: e.target.value })}>
@@ -257,7 +257,7 @@ export default function Profile() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 16 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 16, marginBottom: 16 }}>
               <div className="form-group">
                 <label className="form-label">Team Size (people)</label>
                 <input type="number" value={startupForm.teamSize} onChange={e => setStartupForm({ ...startupForm, teamSize: e.target.value })} required />
@@ -272,7 +272,7 @@ export default function Profile() {
               </div>
             </div>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 24 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12, marginBottom: 24 }}>
               <div className="form-group">
                 <label className="form-label">Website URL</label>
                 <input placeholder="https://website.com" value={startupForm.websiteUrl} onChange={e => setStartupForm({ ...startupForm, websiteUrl: e.target.value })} />

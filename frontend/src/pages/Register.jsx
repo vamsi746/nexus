@@ -116,13 +116,13 @@ export default function Register() {
           <label style={{ display: 'block', fontSize: 12, color: 'var(--tx2)', marginBottom: 6, fontWeight: 500 }}>Description</label>
           <textarea placeholder="Tell us about your startup..." style={{ height: 90, resize: 'vertical' }} value={form.description} onChange={e => update('description', e.target.value)} />
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
           <Field label="Founded Year" placeholder="2023" value={form.foundedYear} onChange={e => update('foundedYear', e.target.value)} />
           <Field label="Team Size" placeholder="12" value={form.teamSize} onChange={e => update('teamSize', e.target.value)} />
           <Field label="Stage" options={STAGES} value={form.stage} onChange={e => update('stage', e.target.value)} />
           <Field label="Total Raised" placeholder="$500K" value={form.totalRaised} onChange={e => update('totalRaised', e.target.value)} />
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
           <Field label="Category" placeholder="AI & ML" value={form.category} onChange={e => update('category', e.target.value)} />
           <Field label="Country" placeholder="USA" value={form.country} onChange={e => update('country', e.target.value)} />
         </div>
@@ -139,7 +139,7 @@ export default function Register() {
         <Field label="Product URL" placeholder="https://app.yourstartup.com" type="url" value={form.productUrl} onChange={e => update('productUrl', e.target.value)} />
         <Field label="Company Website" placeholder="https://yourstartup.com" type="url" value={form.websiteUrl} onChange={e => update('websiteUrl', e.target.value)} />
         <Field label="Pitch Deck URL" placeholder="https://drive.google.com/..." type="url" value={form.pitchDeckUrl} onChange={e => update('pitchDeckUrl', e.target.value)} />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
           <Field label="LinkedIn" placeholder="linkedin.com/company/..." value={form.linkedin} onChange={e => update('linkedin', e.target.value)} />
           <Field label="Twitter / X" placeholder="@yourstartup" value={form.twitter} onChange={e => update('twitter', e.target.value)} />
         </div>
@@ -188,7 +188,7 @@ export default function Register() {
       <div>
         <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 20, fontWeight: 700, marginBottom: 20 }}>University Details</h3>
         <Field label="University / College Name" placeholder="Search your university..." value={form.university} onChange={e => update('university', e.target.value)} />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
           <Field label="Degree" options={["Bachelor's", "Master's", 'PhD', 'Diploma', 'Associate']} value={form.degree} onChange={e => update('degree', e.target.value)} />
           <Field label="Graduation Year" placeholder="2026" value={form.graduationYear} onChange={e => update('graduationYear', e.target.value)} />
         </div>
@@ -203,7 +203,7 @@ export default function Register() {
           <textarea placeholder="Tell startups about yourself..." style={{ height: 80, resize: 'vertical' }} value={form.bio} onChange={e => update('bio', e.target.value)} />
         </div>
         <Field label="Skills (comma separated)" placeholder="Python, React, Machine Learning..." value={form.skills} onChange={e => update('skills', e.target.value)} />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12 }}>
           <Field label="GitHub URL" placeholder="github.com/username" value={form.githubUrl} onChange={e => update('githubUrl', e.target.value)} />
           <Field label="LinkedIn URL" placeholder="linkedin.com/in/username" value={form.linkedinUrl} onChange={e => update('linkedinUrl', e.target.value)} />
         </div>

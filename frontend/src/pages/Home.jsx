@@ -209,7 +209,7 @@ function WalletStack({ startups, allStartups, navigate }) {
         boxShadow: '0 30px 80px rgba(0,0,0,0.35)',
         overflow: 'hidden',
         display: 'flex', flexDirection: 'column',
-        height: 720
+        minHeight: 500
       }}>
         {/* Top bar: search + categories */}
         <div style={{
@@ -278,7 +278,7 @@ function WalletStack({ startups, allStartups, navigate }) {
           </div>
           <div style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(5, 1fr)',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))',
             gap: 18
           }}>
             {filteredStartups.map((startup, idx) => {
@@ -348,15 +348,27 @@ function WalletStack({ startups, allStartups, navigate }) {
 /* ─── HACKATHON CAROUSEL COMPONENT ─── */
 function HackathonCarousel({ hackathons, navigate }) {
   const [active, setActive] = useState(0);
+  const [visibleCount, setVisibleCount] = useState(3);
   const trending = hackathons.filter(h => h.isTrending).slice(0, 5);
   if (!trending.length) return null;
 
   useEffect(() => {
-    const timer = setInterval(() => setActive(i => (i + 1) % Math.max(1, trending.length - 2)), 6000);
-    return () => clearInterval(timer);
-  }, [trending.length]);
+    const updateCount = () => {
+      const w = window.innerWidth;
+      if (w < 640) setVisibleCount(1);
+      else if (w < 1024) setVisibleCount(2);
+      else setVisibleCount(3);
+    };
+    updateCount();
+    window.addEventListener('resize', updateCount);
+    return () => window.removeEventListener('resize', updateCount);
+  }, []);
 
-  const visibleCount = 3;
+  useEffect(() => {
+    const timer = setInterval(() => setActive(i => (i + 1) % Math.max(1, trending.length - visibleCount + 1)), 6000);
+    return () => clearInterval(timer);
+  }, [trending.length, visibleCount]);
+
   const totalSets = Math.max(1, trending.length - visibleCount + 1);
   const safeActive = active % totalSets;
 
@@ -641,7 +653,7 @@ function HeroCarousel({ navigate }) {
   return (
     <section style={{
       position: 'relative',
-      minHeight: 'clamp(640px, 92vh, 880px)',
+      minHeight: 'clamp(500px, 85vh, 880px)',
       background: '#0A0A0C',
       display: 'flex', alignItems: 'center', justifyContent: 'center',
       padding: '24px 24px'
@@ -650,7 +662,7 @@ function HeroCarousel({ navigate }) {
       <div style={{
         position: 'relative',
         width: '100%', maxWidth: 2000,
-        minHeight: 'clamp(560px, 82vh, 760px)',
+        minHeight: 'clamp(420px, 70vh, 760px)',
         borderRadius: 32,
         overflow: 'hidden',
         background: '#0A0A0C',
@@ -681,7 +693,7 @@ function HeroCarousel({ navigate }) {
         <div style={{
           position: 'relative', zIndex: 3,
           height: '100%', display: 'flex', alignItems: 'center',
-          padding: '64px 56px'
+          padding: 'clamp(24px, 4vw, 64px) clamp(20px, 4vw, 56px)'
         }}>
           <div style={{ maxWidth: 520 }}>
             {/* Mini stat row */}
@@ -708,24 +720,24 @@ function HeroCarousel({ navigate }) {
               border: '1px solid rgba(245,158,11,0.28)',
               fontSize: 10, fontWeight: 700, letterSpacing: '0.06em',
               textTransform: 'uppercase', color: '#F59E0B',
-              marginBottom: 24, alignSelf: 'flex-start'
+              marginBottom: 'clamp(12px, 2vw, 24px)', alignSelf: 'flex-start'
             }}>
               ⚡ {s.label} Focus
             </div>
 
             {/* HEADLINE */}
             <h1 style={{
-              fontSize: 'clamp(32px, 4vw, 54px)', fontWeight: 900,
-              lineHeight: 1.06, letterSpacing: '-0.03em',
-              color: '#fff', marginBottom: 18, whiteSpace: 'pre-line'
+              fontSize: 'clamp(24px, 5vw, 54px)', fontWeight: 900,
+              lineHeight: 1.08, letterSpacing: '-0.03em',
+              color: '#fff', marginBottom: 'clamp(10px, 2vw, 18px)'
             }}>
-              {s.headline}
+              {s.headline.replace(/\n/g, ' ')}
             </h1>
 
             {/* BODY */}
             <p style={{
-              fontSize: 15, lineHeight: 1.65, color: 'rgba(255,255,255,0.60)',
-              marginBottom: 38, maxWidth: 420
+              fontSize: 'clamp(13px, 1.5vw, 15px)', lineHeight: 1.6, color: 'rgba(255,255,255,0.60)',
+              marginBottom: 'clamp(16px, 3vw, 38px)', maxWidth: 420
             }}>
               {s.body}
             </p>
@@ -733,19 +745,19 @@ function HeroCarousel({ navigate }) {
             {/* CTAS */}
             <div style={{ display: 'flex', gap: 14, flexWrap: 'wrap' }}>
               <button onClick={() => navigate(s.cta1.route)} style={{
-                padding: '12px 28px', borderRadius: 26,
+                padding: 'clamp(10px, 1.5vw, 12px) clamp(18px, 2vw, 28px)', borderRadius: 26,
                 background: 'linear-gradient(135deg, #10B981 0%, #34D399 100%)',
-                color: '#fff', fontSize: 14, fontWeight: 700,
+                color: '#fff', fontSize: 'clamp(13px, 1.5vw, 14px)', fontWeight: 700,
                 border: 'none', cursor: 'pointer',
                 boxShadow: '0 4px 20px rgba(16,185,129,0.35)',
-                transition: 'all 0.3s'
+                transition: 'all 0.3s', flex: '1 1 140px'
               }}>{s.cta1.text}</button>
               <button onClick={() => navigate(s.cta2.route)} style={{
-                padding: '12px 28px', borderRadius: 26,
+                padding: 'clamp(10px, 1.5vw, 12px) clamp(18px, 2vw, 28px)', borderRadius: 26,
                 background: 'transparent',
-                color: '#fff', fontSize: 14, fontWeight: 700,
+                color: '#fff', fontSize: 'clamp(13px, 1.5vw, 14px)', fontWeight: 700,
                 border: '1px solid rgba(255,255,255,0.22)', cursor: 'pointer',
-                transition: 'all 0.3s'
+                transition: 'all 0.3s', flex: '1 1 140px'
               }}>{s.cta2.text} →</button>
             </div>
           </div>
@@ -753,7 +765,7 @@ function HeroCarousel({ navigate }) {
 
         {/* DOT NAVIGATION — bottom-left */}
         <div style={{
-          position: 'absolute', bottom: 28, left: 56, zIndex: 5,
+          position: 'absolute', bottom: 'clamp(12px, 2vw, 28px)', left: 'clamp(16px, 4vw, 56px)', zIndex: 5,
           display: 'flex', gap: 8, alignItems: 'center'
         }}>
           {slides.map((_, i) => (

@@ -44,7 +44,7 @@ export default function Navbar() {
             }}>LaunchNexus</span>
           </Link>
 
-          <div style={{ display: 'flex', gap: 6 }} className="desktop-nav">
+          <div style={{ display: 'flex', gap: 6 }} className="desktop-nav desktop-only">
             {navItems.map(n => (
               <Link key={n.id} to={n.id} style={{
                 padding: '8px 16px', borderRadius: 'var(--ra-md)', fontSize: 13, fontWeight: 600,
@@ -59,57 +59,59 @@ export default function Navbar() {
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
 
-          {user ? (
-            <>
-              <Link to="/dashboard" style={{
-                padding: '8px 16px', borderRadius: 'var(--ra-md)', fontSize: 13, fontWeight: 700,
-                color: '#040405', background: '#EBECE7', border: '1px solid #EBECE7',
-                textDecoration: 'none', transition: 'all 0.2s'
-              }}>Dashboard</Link>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }} className="desktop-only">
+            {user ? (
+              <>
+                <Link to="/dashboard" style={{
+                  padding: '8px 16px', borderRadius: 'var(--ra-md)', fontSize: 13, fontWeight: 700,
+                  color: '#040405', background: '#EBECE7', border: '1px solid #EBECE7',
+                  textDecoration: 'none', transition: 'all 0.2s'
+                }}>Dashboard</Link>
 
-              <Link to="/profile" style={{
-                padding: '8px 16px', borderRadius: 'var(--ra-md)', fontSize: 13, fontWeight: 700,
-                color: isActive('/profile') ? '#EBECE7' : 'rgba(235,236,231,0.65)',
-                background: isActive('/profile') ? 'rgba(235,236,231,0.1)' : 'transparent',
-                border: `1px solid ${isActive('/profile') ? 'rgba(235,236,231,0.2)' : 'transparent'}`,
-                textDecoration: 'none', transition: 'all 0.2s'
-              }}>Profile</Link>
+                <Link to="/profile" style={{
+                  padding: '8px 16px', borderRadius: 'var(--ra-md)', fontSize: 13, fontWeight: 700,
+                  color: isActive('/profile') ? '#EBECE7' : 'rgba(235,236,231,0.65)',
+                  background: isActive('/profile') ? 'rgba(235,236,231,0.1)' : 'transparent',
+                  border: `1px solid ${isActive('/profile') ? 'rgba(235,236,231,0.2)' : 'transparent'}`,
+                  textDecoration: 'none', transition: 'all 0.2s'
+                }}>Profile</Link>
 
-              <span style={{ fontSize: 13, color: 'rgba(235,236,231,0.45)', marginLeft: 8 }}>{user.email}</span>
-              <button onClick={logout} style={{
-                padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
-                fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid rgba(235,236,231,0.25)',
-                background: 'transparent', color: '#EBECE7', transition: 'all 0.2s'
-              }}>Logout</button>
-            </>
-          ) : (
-            <>
-              <button onClick={() => navigate('/login')} style={{
-                padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
-                fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid rgba(235,236,231,0.25)',
-                background: 'transparent', color: '#EBECE7', transition: 'all 0.2s'
-              }}>
-                Sign In
-              </button>
-              <button onClick={() => navigate('/register?type=student')} style={{
-                padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
-                fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid #EBECE7',
-                background: 'transparent', color: '#EBECE7', transition: 'all 0.2s'
-              }}>
-                For Students
-              </button>
-              <button onClick={() => navigate('/register?type=startup')} style={{
-                padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
-                fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid #EBECE7',
-                background: '#EBECE7', color: '#040405', transition: 'all 0.2s'
-              }}>
-                List Startup 🚀
-              </button>
-            </>
-          )}
+                <span style={{ fontSize: 13, color: 'rgba(235,236,231,0.45)', marginLeft: 8 }}>{user.email}</span>
+                <button onClick={logout} style={{
+                  padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
+                  fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid rgba(235,236,231,0.25)',
+                  background: 'transparent', color: '#EBECE7', transition: 'all 0.2s'
+                }}>Logout</button>
+              </>
+            ) : (
+              <>
+                <button onClick={() => navigate('/login')} style={{
+                  padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
+                  fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid rgba(235,236,231,0.25)',
+                  background: 'transparent', color: '#EBECE7', transition: 'all 0.2s'
+                }}>
+                  Sign In
+                </button>
+                <button onClick={() => navigate('/register?type=student')} style={{
+                  padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
+                  fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid #EBECE7',
+                  background: 'transparent', color: '#EBECE7', transition: 'all 0.2s'
+                }}>
+                  For Students
+                </button>
+                <button onClick={() => navigate('/register?type=startup')} style={{
+                  padding: '8px 16px', borderRadius: 'var(--ra-sm)', fontSize: 12, fontWeight: 700,
+                  fontFamily: 'Arial, sans-serif', cursor: 'pointer', border: '1px solid #EBECE7',
+                  background: '#EBECE7', color: '#040405', transition: 'all 0.2s'
+                }}>
+                  List Startup 🚀
+                </button>
+              </>
+            )}
+          </div>
 
-          <button className="mobile-menu-btn" onClick={() => setMenuOpen(!menuOpen)} style={{
-            display: 'none', background: 'transparent', border: '1px solid rgba(235,236,231,0.2)',
+          <button className="mobile-menu-btn mobile-only" onClick={() => setMenuOpen(!menuOpen)} style={{
+            background: 'transparent', border: '1px solid rgba(235,236,231,0.2)',
             color: '#EBECE7', padding: '6px 12px', borderRadius: 8, cursor: 'pointer'
           }}>&#9776;</button>
         </div>
@@ -117,15 +119,29 @@ export default function Navbar() {
 
       {menuOpen && (
         <div style={{
-          display: 'flex', flexDirection: 'column', gap: 6, padding: '12px 0',
+          flexDirection: 'column', gap: 6, padding: '12px 0',
           borderTop: '1px solid rgba(235,236,231,0.1)', background: '#040405'
-        }} className="mobile-nav">
+        }} className="mobile-nav mobile-only">
           {navItems.map(n => (
             <Link key={n.id} to={n.id} onClick={() => setMenuOpen(false)} style={{
               padding: '10px 16px', fontSize: 14, color: isActive(n.id) ? '#EBECE7' : 'rgba(235,236,231,0.65)',
               textDecoration: 'none'
             }}>{n.label}</Link>
           ))}
+          <div style={{ height: 1, background: 'rgba(235,236,231,0.1)', margin: '8px 16px' }} />
+          {user ? (
+            <>
+              <Link to="/dashboard" onClick={() => setMenuOpen(false)} style={{ padding: '10px 16px', fontSize: 14, color: '#EBECE7', textDecoration: 'none' }}>Dashboard</Link>
+              <Link to="/profile" onClick={() => setMenuOpen(false)} style={{ padding: '10px 16px', fontSize: 14, color: '#EBECE7', textDecoration: 'none' }}>Profile</Link>
+              <button onClick={() => { logout(); setMenuOpen(false); }} style={{ padding: '10px 16px', fontSize: 14, color: '#EBECE7', background: 'transparent', border: 'none', textAlign: 'left', cursor: 'pointer' }}>Logout</button>
+            </>
+          ) : (
+            <>
+              <button onClick={() => { navigate('/login'); setMenuOpen(false); }} style={{ padding: '10px 16px', fontSize: 14, color: '#EBECE7', background: 'transparent', border: 'none', textAlign: 'left', cursor: 'pointer' }}>Sign In</button>
+              <button onClick={() => { navigate('/register?type=student'); setMenuOpen(false); }} style={{ padding: '10px 16px', fontSize: 14, color: '#EBECE7', background: 'transparent', border: 'none', textAlign: 'left', cursor: 'pointer' }}>For Students</button>
+              <button onClick={() => { navigate('/register?type=startup'); setMenuOpen(false); }} style={{ padding: '10px 16px', fontSize: 14, color: '#EBECE7', background: 'transparent', border: 'none', textAlign: 'left', cursor: 'pointer' }}>List Startup 🚀</button>
+            </>
+          )}
         </div>
       )}
     </nav>

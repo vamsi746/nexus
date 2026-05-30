@@ -243,7 +243,7 @@ export default function StartupDetail() {
         {/* Startup Statistics metrics (StartupTracker style) */}
         <Card style={{ padding: 24 }}>
           <h3 style={{ fontFamily: 'Arial, sans-serif', fontSize: 16, fontWeight: 700, marginBottom: 16 }}>Startup Performance Data</h3>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: 12 }}>
             {[
               ['FUNDING STAGE', startup.stage || 'Seed', 'var(--accent-light)'],
               ['TEAM SIZE', `${startup.teamSize || startup.team || 12} people`, 'var(--tx0)'],

@@ -561,7 +561,7 @@ export default function Dashboard() {
               <Card>
                 <h2 className="section-title" style={{ marginBottom: 20 }}>Edit Startup Profile Details</h2>
                 <form onSubmit={updateStartupProfile}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 16, marginBottom: 16 }}>
                     <div className="form-group">
                       <label className="form-label">Startup Name</label>
                       <input value={myStartup.name || ''} onChange={e => setMyStartup({ ...myStartup, name: e.target.value })} />
@@ -579,7 +579,7 @@ export default function Dashboard() {
                     <label className="form-label">Long Description</label>
                     <textarea style={{ height: 120, resize: 'vertical' }} value={myStartup.description || ''} onChange={e => setMyStartup({ ...myStartup, description: e.target.value })} />
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 16, marginBottom: 16 }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 16, marginBottom: 16 }}>
                     <div className="form-group">
                       <label className="form-label">Founded Year</label>
                       <input type="number" value={myStartup.foundedYear || ''} onChange={e => setMyStartup({ ...myStartup, foundedYear: Number(e.target.value) })} />
@@ -595,7 +595,7 @@ export default function Dashboard() {
                       </select>
                     </div>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 20 }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 16, marginBottom: 20 }}>
                     <div className="form-group">
                       <label className="form-label">Total Raised Funding (e.g. $1.2M)</label>
                       <input value={myStartup.raised || ''} onChange={e => setMyStartup({ ...myStartup, raised: e.target.value })} />
@@ -825,7 +825,7 @@ export default function Dashboard() {
               <label className="form-label">Position Title</label>
               <input placeholder="e.g. Lead Full-Stack Architect" value={oppForm.title} onChange={e => setOppForm({ ...oppForm, title: e.target.value })} required />
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12, marginBottom: 12 }}>
               <div className="form-group">
                 <label className="form-label">Hiring Type</label>
                 <select value={oppForm.type} onChange={e => setOppForm({ ...oppForm, type: e.target.value })}>
@@ -837,7 +837,7 @@ export default function Dashboard() {
                 <input placeholder="e.g. Permanent or 6 months" value={oppForm.duration} onChange={e => setOppForm({ ...oppForm, duration: e.target.value })} required />
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12, marginBottom: 12 }}>
               <div className="form-group">
                 <label className="form-label">Job Location</label>
                 <input placeholder="Remote / SF" value={oppForm.location} onChange={e => setOppForm({ ...oppForm, location: e.target.value })} required />
@@ -880,7 +880,7 @@ export default function Dashboard() {
               <label className="form-label">Brief Description</label>
               <textarea style={{ height: 80 }} placeholder="Design novel energy distribution solutions for off-grid communities..." value={hackForm.description} onChange={e => setHackForm({ ...hackForm, description: e.target.value })} required />
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12, marginBottom: 12 }}>
               <div className="form-group">
                 <label className="form-label">Total Prize Pool ($ USD)</label>
                 <input placeholder="e.g. $50,000" value={hackForm.prizePool} onChange={e => setHackForm({ ...hackForm, prizePool: e.target.value })} required />
@@ -890,7 +890,7 @@ export default function Dashboard() {
                 <input placeholder="e.g. 72 hours" value={hackForm.duration} onChange={e => setHackForm({ ...hackForm, duration: e.target.value })} required />
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginBottom: 12 }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(220px, 1fr))', gap: 12, marginBottom: 12 }}>
               <div className="form-group">
                 <label className="form-label">Spots Capacity Limit</label>
                 <input type="number" value={hackForm.maxSpots} onChange={e => setHackForm({ ...hackForm, maxSpots: Number(e.target.value) })} required />

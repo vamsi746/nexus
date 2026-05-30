@@ -12,8 +12,9 @@ export default function Footer() {
     <footer style={{ background: 'var(--bg1)', borderTop: '1px solid var(--border)', padding: '50px 24px 24px' }}>
       <div style={{ maxWidth: 1320, margin: '0 auto' }}>
         <div style={{
-          display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr 1fr', gap: 32, marginBottom: 48
-        }}>
+          display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 32, marginBottom: 48
+        }}
+        className="footer-grid">
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
               <div style={{
