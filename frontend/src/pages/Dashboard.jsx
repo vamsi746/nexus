@@ -5,6 +5,8 @@ import api from '../services/api.js';
 import Card from '../components/shared/Card.jsx';
 import Avatar from '../components/shared/Avatar.jsx';
 import Badge from '../components/shared/Badge.jsx';
+import AdminDashboard from './admin/AdminDashboard.jsx';
+import StudentDashboard from './student/StudentDashboard.jsx';
 
 export default function Dashboard() {
   const { user, token } = useAuth();
@@ -227,6 +229,16 @@ export default function Dashboard() {
   }
 
   if (!user) return null;
+
+  // Route admin & service_provider to the new Admin Dashboard
+  if (user.role === 'admin' || user.role === 'service_provider') {
+    return <AdminDashboard />;
+  }
+
+  // Route student to the new Student Dashboard
+  if (user.role === 'student') {
+    return <StudentDashboard />;
+  }
 
   // ─── RENDER ADMIN DASHBOARD ───
   const renderAdmin = () => {
