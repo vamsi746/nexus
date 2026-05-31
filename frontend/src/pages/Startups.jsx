@@ -66,14 +66,14 @@ export default function Discover() {
 
       {/* FILTER CONTROL DECK (Bento search panel style) */}
       <div style={{
-        padding: '24px 28px', marginBottom: 40, borderRadius: 'var(--ra-lg)',
+        padding: 'clamp(16px, 3vw, 24px) clamp(14px, 3vw, 28px)', marginBottom: 40, borderRadius: 'var(--ra-lg)',
         display: 'flex', flexDirection: 'column', gap: 20,
         background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.1)'
       }}>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-          
+
           {/* SEARCH BAR */}
-          <div style={{ flex: '2 1 300px', position: 'relative' }}>
+          <div style={{ flex: '2 1 260px', position: 'relative', minWidth: 0 }}>
             <input
               value={search} onChange={e => setSearch(e.target.value)}
               placeholder="Search by keywords, tags, or technology..."
@@ -85,7 +85,7 @@ export default function Discover() {
           </div>
 
           {/* STAGE SELECTION */}
-          <div style={{ flex: '1 1 180px' }}>
+          <div style={{ flex: '1 1 160px', minWidth: 0 }}>
             <select value={stage} onChange={e => setStage(e.target.value)}>
               <option value="All">All Stages</option>
               {STAGES.map(s => <option key={s} value={s}>{s}</option>)}
@@ -135,7 +135,7 @@ export default function Discover() {
           <p style={{ color: '#9A9A9D', fontSize: 13 }}>Try resetting the categories list, stage filters, or modifying keywords.</p>
         </div>
       ) : (
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(365px, 1fr))', gap: 24 }}>
+        <div className="startups-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
           {filtered.map(s => (
             <StartupCard key={s._id || s.id} startup={s} />
           ))}
