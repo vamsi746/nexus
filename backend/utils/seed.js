@@ -48,7 +48,7 @@ const seed = async () => {
 
   const startups = [
     {
-      name: 'NeuralPath AI', initials: 'NP', color: '#7C6EFA', stage: 'Seed', category: 'AI & ML',
+      name: 'NeuralPath AI', initials: 'NP', color: '#7C6EFA', logoUrl: 'https://www.google.com/s2/favicons?domain=openai.com&sz=256', stage: 'Seed', category: 'AI & ML',
       tagline: 'Autonomous AI agents that reduce enterprise ops costs by 60%',
       location: 'San Francisco, USA', flag: '🇺🇸', foundedYear: 2023, teamSize: 12, raised: '$2.4M',
       tags: ['AI Agents', 'Enterprise', 'Automation', 'SaaS'], upvoteCount: 847, viewCount: 12400,
@@ -58,7 +58,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'GreenVolt', initials: 'GV', color: '#34D399', stage: 'Series A', category: 'CleanTech',
+      name: 'GreenVolt', initials: 'GV', color: '#34D399', logoUrl: 'https://www.google.com/s2/favicons?domain=tesla.com&sz=256', stage: 'Series A', category: 'CleanTech',
       tagline: 'Decentralized P2P solar energy trading for emerging markets',
       location: 'Lagos, Nigeria', flag: '🇳🇬', foundedYear: 2022, teamSize: 34, raised: '$8.1M',
       tags: ['Clean Energy', 'Africa', 'Blockchain', 'Impact'], upvoteCount: 1203, viewCount: 28700,
@@ -68,7 +68,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1509391363532-84c7b8f4a1b8?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'MediLens', initials: 'ML', color: '#FB7185', stage: 'Pre-Seed', category: 'HealthTech',
+      name: 'MediLens', initials: 'ML', color: '#FB7185', logoUrl: 'https://www.google.com/s2/favicons?domain=pfizer.com&sz=256', stage: 'Pre-Seed', category: 'HealthTech',
       tagline: 'CV-powered diagnostics for rural healthcare across SE Asia',
       location: 'Singapore', flag: '🇸🇬', foundedYear: 2023, teamSize: 8, raised: '$1.2M',
       tags: ['Health AI', 'Diagnostics', 'Impact', 'Computer Vision'], upvoteCount: 534, viewCount: 8900,
@@ -78,7 +78,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'EduVerse', initials: 'EV', color: '#FCD34D', stage: 'Seed', category: 'EdTech',
+      name: 'EduVerse', initials: 'EV', color: '#FCD34D', logoUrl: 'https://www.google.com/s2/favicons?domain=khanacademy.org&sz=256', stage: 'Seed', category: 'EdTech',
       tagline: 'Immersive VR classrooms making elite education globally accessible',
       location: 'Bangalore, India', flag: '🇮🇳', foundedYear: 2022, teamSize: 23, raised: '$3.7M',
       tags: ['VR/AR', 'Education', 'Accessibility', 'B2C'], upvoteCount: 692, viewCount: 15300,
@@ -88,7 +88,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'ChainPay', initials: 'CP', color: '#A78BFA', stage: 'Series A', category: 'FinTech',
+      name: 'ChainPay', initials: 'CP', color: '#A78BFA', logoUrl: 'https://www.google.com/s2/favicons?domain=wise.com&sz=256', stage: 'Series A', category: 'FinTech',
       tagline: 'Instant cross-border B2B settlements via stablecoin rails',
       location: 'Dubai, UAE', flag: '🇦🇪', foundedYear: 2021, teamSize: 41, raised: '$12M',
       tags: ['Stablecoins', 'B2B Payments', 'Cross-Border', 'FinTech'], upvoteCount: 1567, viewCount: 41200,
@@ -98,7 +98,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1639762681485-074b7f938ba0?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'RoboFarm', initials: 'RF', color: '#22D3EE', stage: 'Seed', category: 'Deep Tech',
+      name: 'RoboFarm', initials: 'RF', color: '#22D3EE', logoUrl: 'https://www.google.com/s2/favicons?domain=nvidia.com&sz=256', stage: 'Seed', category: 'Deep Tech',
       tagline: 'Autonomous micro-robots increasing crop yield 40% with zero pesticides',
       location: 'Berlin, Germany', flag: '🇩🇪', foundedYear: 2022, teamSize: 19, raised: '$5.4M',
       tags: ['Robotics', 'AgriTech', 'Sustainability', 'Hardware'], upvoteCount: 781, viewCount: 18100,
@@ -108,7 +108,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'ShopStack', initials: 'SS', color: '#F97316', stage: 'Series B', category: 'E-Commerce',
+      name: 'ShopStack', initials: 'SS', color: '#F97316', logoUrl: 'https://www.google.com/s2/favicons?domain=shopify.com&sz=256', stage: 'Series B', category: 'E-Commerce',
       tagline: 'AI-native commerce OS for D2C brands scaling to 9 figures',
       location: 'New York, USA', flag: '🇺🇸', foundedYear: 2020, teamSize: 87, raised: '$31M',
       tags: ['Commerce', 'AI', 'D2C', 'Shopify Alternative'], upvoteCount: 2103, viewCount: 67800,
@@ -118,7 +118,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'DataWeave', initials: 'DW', color: '#818CF8', stage: 'Seed', category: 'SaaS & B2B',
+      name: 'DataWeave', initials: 'DW', color: '#818CF8', logoUrl: 'https://www.google.com/s2/favicons?domain=databricks.com&sz=256', stage: 'Seed', category: 'SaaS & B2B',
       tagline: 'No-code data pipeline builder shipping analytics 10x faster',
       location: 'Toronto, Canada', flag: '🇨🇦', foundedYear: 2023, teamSize: 11, raised: '$1.8M',
       tags: ['No-Code', 'Data Engineering', 'Analytics', 'SaaS'], upvoteCount: 423, viewCount: 7600,
@@ -128,7 +128,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'Web3Vault', initials: 'W3', color: '#8B5CF6', stage: 'Seed', category: 'Web3',
+      name: 'Web3Vault', initials: 'W3', color: '#8B5CF6', logoUrl: 'https://www.google.com/s2/favicons?domain=coinbase.com&sz=256', stage: 'Seed', category: 'Web3',
       tagline: 'Enterprise-grade multi-chain custody for institutional crypto',
       location: 'Zurich, Switzerland', flag: '🇨🇭', foundedYear: 2023, teamSize: 14, raised: '$3.2M',
       tags: ['Web3', 'Blockchain', 'Security', 'Enterprise'], upvoteCount: 612, viewCount: 11200,
@@ -138,7 +138,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1639762681057-408e52192e55?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'OceanGuard', initials: 'OG', color: '#0EA5E9', stage: 'Series A', category: 'CleanTech',
+      name: 'OceanGuard', initials: 'OG', color: '#0EA5E9', logoUrl: 'https://www.google.com/s2/favicons?domain=oceanconservancy.org&sz=256', stage: 'Series A', category: 'CleanTech',
       tagline: 'Autonomous AI ocean trash removal fleets operating 24/7',
       location: 'Copenhagen, Denmark', flag: '🇩🇰', foundedYear: 2021, teamSize: 28, raised: '$9.5M',
       tags: ['Ocean Tech', 'Robotics', 'AI', 'Sustainability'], upvoteCount: 1876, viewCount: 34500,
@@ -148,7 +148,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1468413253725-0d5181091126?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'NexaLearn', initials: 'NL', color: '#F59E0B', stage: 'Pre-Seed', category: 'EdTech',
+      name: 'NexaLearn', initials: 'NL', color: '#F59E0B', logoUrl: 'https://www.google.com/s2/favicons?domain=duolingo.com&sz=256', stage: 'Pre-Seed', category: 'EdTech',
       tagline: 'AI tutor that personalizes STEM learning for every student',
       location: 'London, UK', flag: '🇬🇧', foundedYear: 2024, teamSize: 6, raised: '$850K',
       tags: ['Education', 'AI Tutor', 'STEM', 'Personalization'], upvoteCount: 298, viewCount: 5200,
@@ -158,7 +158,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'PayFlow', initials: 'PF', color: '#10B981', stage: 'Series B', category: 'FinTech',
+      name: 'PayFlow', initials: 'PF', color: '#10B981', logoUrl: 'https://www.google.com/s2/favicons?domain=stripe.com&sz=256', stage: 'Series B', category: 'FinTech',
       tagline: 'Embedded payroll and compliance for global remote teams',
       location: 'Sydney, Australia', flag: '🇦🇺', foundedYear: 2020, teamSize: 64, raised: '$22M',
       tags: ['Payroll', 'Global Hiring', 'Compliance', 'FinTech'], upvoteCount: 2341, viewCount: 51200,
@@ -168,7 +168,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'NeuroFit', initials: 'NF', color: '#EF4444', stage: 'Seed', category: 'HealthTech',
+      name: 'NeuroFit', initials: 'NF', color: '#EF4444', logoUrl: 'https://www.google.com/s2/favicons?domain=whoop.com&sz=256', stage: 'Seed', category: 'HealthTech',
       tagline: 'Brain-computer interface wearables for ADHD and focus',
       location: 'Boston, USA', flag: '🇺🇸', foundedYear: 2023, teamSize: 9, raised: '$2.1M',
       tags: ['Neurotech', 'Wearables', 'ADHD', 'BCI'], upvoteCount: 478, viewCount: 9800,
@@ -178,7 +178,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'SonicGrid', initials: 'SG', color: '#EC4899', stage: 'Series A', category: 'Media',
+      name: 'SonicGrid', initials: 'SG', color: '#EC4899', logoUrl: 'https://www.google.com/s2/favicons?domain=spotify.com&sz=256', stage: 'Series A', category: 'Media',
       tagline: 'Generative audio engine for game studios and film composers',
       location: 'Stockholm, Sweden', flag: '🇸🇪', foundedYear: 2022, teamSize: 31, raised: '$7.8M',
       tags: ['Generative AI', 'Audio', 'Gaming', 'Creative Tools'], upvoteCount: 1045, viewCount: 22300,
@@ -188,7 +188,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'DronePath', initials: 'DP', color: '#6366F1', stage: 'Series A', category: 'Deep Tech',
+      name: 'DronePath', initials: 'DP', color: '#6366F1', logoUrl: 'https://www.google.com/s2/favicons?domain=dji.com&sz=256', stage: 'Series A', category: 'Deep Tech',
       tagline: 'Autonomous drone delivery network for last-mile logistics',
       location: 'São Paulo, Brazil', flag: '🇧🇷', foundedYear: 2021, teamSize: 47, raised: '$14M',
       tags: ['Drones', 'Logistics', 'Autonomy', 'Delivery'], upvoteCount: 1567, viewCount: 38900,
@@ -198,7 +198,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1473968512647-3e447244af8f?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'TerraCarbon', initials: 'TC', color: '#22C55E', stage: 'Seed', category: 'CleanTech',
+      name: 'TerraCarbon', initials: 'TC', color: '#22C55E', logoUrl: 'https://www.google.com/s2/favicons?domain=climeworks.com&sz=256', stage: 'Seed', category: 'CleanTech',
       tagline: 'Satellite-verified carbon credit marketplace for reforestation',
       location: 'Nairobi, Kenya', flag: '🇰🇪', foundedYear: 2023, teamSize: 15, raised: '$4.1M',
       tags: ['Carbon Credits', 'Satellite', 'Reforestation', 'Climate'], upvoteCount: 823, viewCount: 16700,
@@ -208,7 +208,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'LegalBot', initials: 'LB', color: '#A855F7', stage: 'Pre-Seed', category: 'SaaS & B2B',
+      name: 'LegalBot', initials: 'LB', color: '#A855F7', logoUrl: 'https://www.google.com/s2/favicons?domain=legalzoom.com&sz=256', stage: 'Pre-Seed', category: 'SaaS & B2B',
       tagline: 'AI legal assistant for startups — contracts, IP, and compliance',
       location: 'Berlin, Germany', flag: '🇩🇪', foundedYear: 2024, teamSize: 7, raised: '$1.1M',
       tags: ['Legal Tech', 'AI', 'Contracts', 'Startups'], upvoteCount: 389, viewCount: 7400,
@@ -218,7 +218,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'ByteBazaar', initials: 'BB', color: '#F97316', stage: 'Series B', category: 'E-Commerce',
+      name: 'ByteBazaar', initials: 'BB', color: '#F97316', logoUrl: 'https://www.google.com/s2/favicons?domain=gumroad.com&sz=256', stage: 'Series B', category: 'E-Commerce',
       tagline: 'Social commerce platform for creators selling digital products',
       location: 'Seoul, South Korea', flag: '🇰🇷', foundedYear: 2020, teamSize: 72, raised: '$28M',
       tags: ['Social Commerce', 'Creator Economy', 'Digital Goods', 'Asia'], upvoteCount: 3102, viewCount: 72100,
@@ -228,7 +228,7 @@ const seed = async () => {
       coverImageUrl: 'https://images.unsplash.com/photo-1556761175-b413da4b994e?auto=format&fit=crop&w=1200&q=80',
     },
     {
-      name: 'MindWell', initials: 'MW', color: '#06B6D4', stage: 'Seed', category: 'HealthTech',
+      name: 'MindWell', initials: 'MW', color: '#06B6D4', logoUrl: 'https://www.google.com/s2/favicons?domain=headspace.com&sz=256', stage: 'Seed', category: 'HealthTech',
       tagline: 'VR therapy platform for anxiety and PTSD treatment at home',
       location: 'Amsterdam, Netherlands', flag: '🇳🇱', foundedYear: 2023, teamSize: 10, raised: '$1.9M',
       tags: ['VR Therapy', 'Mental Health', 'Telemedicine', 'Wellness'], upvoteCount: 645, viewCount: 13400,

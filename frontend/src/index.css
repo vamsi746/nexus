@@ -415,3 +415,142 @@ select option { background: var(--bg2); color: var(--tx0); }
   .student-sidebar { display: none !important; }
   .student-sidebar[style*="fixed"] { display: flex !important; }
 }
+
+/* ─── TYPEWRITER CURSOR ─── */
+.type-cursor {
+  display: inline-block;
+  color: #8B5CF6;
+  font-weight: 300;
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ─── TRENDING HOVER CARDS ─── */
+.trend-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+}
+.trend-card {
+  background: #16161A;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 22px 16px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  height: 200px;
+  text-align: center;
+  transition: background 0.25s ease, border-color 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+.trend-card:hover {
+  background: #EBECE7 !important;
+  border-color: rgba(0,0,0,0.08) !important;
+}
+.trend-card .trend-logo {
+  width: 64px;
+  height: 64px;
+  transition: width 0.3s ease, height 0.3s ease;
+}
+.trend-card:hover .trend-logo {
+  width: 40px;
+  height: 40px;
+}
+.trend-card .trend-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: #FFFAFA;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  transition: color 0.25s ease, font-size 0.3s ease;
+}
+.trend-card:hover .trend-name {
+  font-size: 13px;
+  color: #0A0A0C !important;
+}
+.trend-card .trend-desc {
+  font-size: 11px;
+  color: rgba(0,0,0,0.6);
+  line-height: 1.45;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease, margin-top 0.3s ease;
+  margin-top: 0;
+}
+.trend-card:hover .trend-desc {
+  max-height: 120px;
+  opacity: 1;
+  margin-top: 4px;
+}
+@media (max-width: 1024px) {
+  .trend-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media (max-width: 768px) {
+  .trend-grid { grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .trend-card { height: 180px; padding: 18px 12px; }
+}
+@media (max-width: 480px) {
+  .trend-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+}
+
+/* ─── BENTO GRID ─── */
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.bento-cell {
+  background: #16161A;
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 20px;
+  padding: 20px;
+  cursor: pointer;
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+  min-height: 140px;
+}
+.bento-cell:hover {
+  border-color: rgba(139,92,246,0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(139,92,246,0.08);
+}
+
+.bento-card-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Responsive bento */
+@media (max-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 768px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .bento-cell {
+    padding: 14px;
+    min-height: 120px;
+    border-radius: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+}
